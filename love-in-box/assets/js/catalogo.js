@@ -189,7 +189,7 @@ window.LIB_CATALOGO = {
       resumo: "Para preparar chá em folhas direto na caneca.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/infusor-cha-1.jpg", alt: "Infusores de chá em formato de coração e colheres sobre tecido claro" }
+        { src: "assets/img/produtos/infusor-cha-e1.jpg", alt: "Quatro infusores de chá de inox em formato de coração, com cabo de coração vazado, sobre fundo bege" }
       ],
       destaque: false, ordem: 9
     },
@@ -217,8 +217,7 @@ window.LIB_CATALOGO = {
       resumo: "Colher para acompanhar a caneca.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/colher-inox-1.jpg", alt: "Colheres de inox e douradas com cabo em formato de coração e flor" },
-        { src: "assets/img/produtos/colher-inox-2.jpg", alt: "Conjunto de colheres e infusores de coração em inox e dourado" }
+        { src: "assets/img/produtos/colher-inox-e1.jpg", alt: "Quatro colheres douradas, duas com ponta em coração e duas em formato de flor, sobre fundo bege" }
       ],
       destaque: false, ordem: 11
     },
