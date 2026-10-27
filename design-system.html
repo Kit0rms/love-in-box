@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design System · Love in Box</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Mini design system do site Love in Box: cores, tipografia, botões, selos, cards e formulários.">
+<meta name="theme-color" content="#FFFBF6">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Love in Box">
+<meta property="og:title" content="Design System · Love in Box">
+<meta property="og:description" content="Mini design system do site Love in Box: cores, tipografia, botões, selos, cards e formulários.">
+<meta property="og:image" content="assets/img/marca/hero-cafe-poster.jpg">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/png" href="assets/img/marca/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<meta name="robots" content="noindex">
+<style>
+.ds-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.ds-sw{display:grid;gap:4px;font-size:.875rem;min-width:0}
+.ds-sw span{display:block;aspect-ratio:3/2;border-radius:14px}
+.ds-sw code{font-size:.8125rem;color:var(--ink-2)}
+.ds-sw small{color:var(--ink-2);font-size:.75rem}
+.ds-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ds-block{display:grid;gap:16px}
+.ds-block + .ds-block{margin-top:28px;padding-top:28px;border-top:1px solid var(--line)}
+.ds-type > *{margin:0}
+</style>
+<script defer src="assets/js/config.js"></script>
+<script defer src="assets/js/catalogo.js"></script>
+<script defer src="assets/js/pages.js"></script>
+<script defer src="assets/js/app.js"></script>
+</head>
+<body data-page="ds">
+<div id="lib-header"></div>
+<main id="conteudo" class="page-shell" tabindex="-1" data-page="ds">
+<noscript><div class="tile tile-pad"><p>Ative o JavaScript do navegador para ver os presentes e enviar sua solicitação.</p></div></noscript>
+
+<section class="tile">
+  <div class="page-hero">
+    <p class="label">Uso interno · versão 1</p>
+    <h1 class="display h2">Design system</h1>
+    <p class="lead">Tokens e componentes do site. Tudo vem de <code>assets/css/styles.css</code>. A logomarca e os ícones oficiais são usados como arquivos fornecidos, sem alteração.</p>
+  </div>
+</section>
+<section class="tile"><div class="tile-pad">
+  <div class="ds-block">
+    <h2 class="label">Paleta oficial</h2>
+    <div class="ds-grid">
+      <div class="ds-sw"><span style="background:var(--deep);box-shadow:inset 0 0 0 1px var(--line)"></span><strong>Deep Pink Accent</strong><code>#DA5666</code><small>Acento: números, detalhes</small></div>
+      <div class="ds-sw"><span style="background:var(--gold);box-shadow:inset 0 0 0 1px var(--line)"></span><strong>Golden Yellow</strong><code>#F0B225</code><small>Acento pontual</small></div>
+      <div class="ds-sw"><span style="background:var(--pink);box-shadow:inset 0 0 0 1px var(--line)"></span><strong>Primary Pink</strong><code>#F96F91</code><small>Uso pontual</small></div>
+      <div class="ds-sw"><span style="background:var(--sun);box-shadow:inset 0 0 0 1px var(--line)"></span><strong>Bright Sun</strong><code>#FAC233</code><small>Selo de status, prévia</small></div>
+      <div class="ds-sw"><span style="background:var(--cream);box-shadow:inset 0 0 0 1px var(--line)"></span><strong>Warm Cream</strong><code>#F8EDE2</code><small>Superfície dos blocos</small></div>
+      <div class="ds-sw"><span style="background:var(--sand);box-shadow:inset 0 0 0 1px var(--line)"></span><strong>Soft Sand</strong><code>#E8CFAD</code><small>Bloco de ênfase</small></div>
+      <div class="ds-sw"><span style="background:var(--caramel);box-shadow:inset 0 0 0 1px var(--line)"></span><strong>Caramel Shadow</strong><code>#A96C4E</code><small>Linhas, ícones de apoio</small></div>
+    </div>
+  </div>
+  <div class="ds-block">
+    <h2 class="label">Derivados para legibilidade (contraste AA)</h2>
+    <div class="ds-grid">
+      <div class="ds-sw"><span style="background:var(--bg);box-shadow:inset 0 0 0 1px var(--line)"></span><strong>Fundo</strong><code>#FFFBF6</code><small>Fundo da página</small></div>
+      <div class="ds-sw"><span style="background:var(--cream-2);box-shadow:inset 0 0 0 1px var(--line)"></span><strong>Creme 2</strong><code>#F3E3D1</code><small>Bloco alternado</small></div>
+      <div class="ds-sw"><span style="background:var(--ink)"></span><strong>Tinta</strong><code>#3A2318</code><small>Texto e botão principal · 12,7:1 no creme</small></div>
+      <div class="ds-sw"><span style="background:var(--ink-2)"></span><strong>Tinta 2</strong><code>#6B4634</code><small>Texto de apoio · 7,1:1 no creme</small></div>
+      <div class="ds-sw"><span style="background:var(--deep-ink)"></span><strong>Rosa contraste</strong><code>#B4434F</code><small>Botão rosa · 5,5:1 com branco</small></div>
+    </div>
+  </div>
+  <div class="ds-block ds-type">
+    <h2 class="label">Tipografia · Baloo 2 + Nunito (pendente de aprovação)</h2>
+    <p class="display h1">Títulos com inicial maiúscula</p>
+    <p class="display h2">Título de seção</p>
+    <p class="display h3">Título de bloco</p>
+    <p class="lead">Texto de apoio maior, para abrir uma seção.</p>
+    <p>Texto corrido em Nunito, 16px, entrelinha 1,55.</p>
+    <p class="label">Rótulo em caixa alta</p>
+  </div>
+  <div class="ds-block">
+    <h2 class="label">Botões</h2>
+    <div class="ds-row"><a class="btn btn--dark" href="#">Principal</a><a class="btn btn--line" href="#">Secundário</a><a class="btn btn--pink" href="#">WhatsApp</a><a class="btn btn--dark btn--sm" href="#">Pequeno</a><a class="link-arrow" href="#">Link com seta<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="ds-row" style="background:var(--ink);padding:16px;border-radius:16px"><a class="btn btn--light" href="#">Sobre fundo escuro</a></div>
+  </div>
+  <div class="ds-block">
+    <h2 class="label">Selos de disponibilidade</h2>
+    <div class="ds-row" style="background:var(--cream-2);padding:16px;border-radius:16px">
+      <span class="badge" data-status="em-venda">Em venda</span><span class="badge" data-status="sob-encomenda">Sob encomenda</span><span class="badge" data-status="sem-estoque">Sem estoque</span><span class="badge" data-status="em-estudo">Em estudo</span>
+    </div>
+    <p class="small muted">Em desenvolvimento não aparece para o cliente.</p>
+  </div>
+  <div class="ds-block">
+    <h2 class="label">Chips e campos</h2>
+    <div class="chips"><button class="chip" type="button" aria-pressed="true">Ativo</button><button class="chip" type="button" aria-pressed="false">Inativo</button></div>
+    <div class="two"><div class="field"><label for="ds-in">Campo</label><input class="input" id="ds-in" placeholder="Texto"></div><div class="field"><label for="ds-se">Seleção</label><select class="select" id="ds-se"><option>Opção</option></select></div></div>
+    <p class="notice"><strong>Aviso.</strong> Usado para explicar limites, como "solicitação não é compra".</p>
+  </div>
+</div></section>
+<section class="row-wrap"><div class="row-head"><h2 class="display h3">Cards de produto</h2></div><div class="pgrid pgrid--4" id="ds-cards"></div></section>
+</main>
+<div id="lib-footer"></div>
+</body>
+</html>

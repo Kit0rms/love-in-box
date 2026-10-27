@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Solicitação · Love in Box</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Revise os itens, conte os detalhes da personalização e envie a solicitação para o WhatsApp da Love in Box.">
+<meta name="theme-color" content="#FFFBF6">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Love in Box">
+<meta property="og:title" content="Solicitação · Love in Box">
+<meta property="og:description" content="Revise os itens, conte os detalhes da personalização e envie a solicitação para o WhatsApp da Love in Box.">
+<meta property="og:image" content="assets/img/marca/hero-cafe-poster.jpg">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/png" href="assets/img/marca/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script defer src="assets/js/config.js"></script>
+<script defer src="assets/js/catalogo.js"></script>
+<script defer src="assets/js/pages.js"></script>
+<script defer src="assets/js/app.js"></script>
+</head>
+<body data-page="pedido">
+<div id="lib-header"></div>
+<main id="conteudo" class="page-shell" tabindex="-1" data-page="pedido">
+<noscript><div class="tile tile-pad"><p>Ative o JavaScript do navegador para ver os presentes e enviar sua solicitação.</p></div></noscript>
+
+<section class="tile">
+  <div class="page-hero">
+    <nav class="crumbs" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Solicitação</span></nav>
+    <h1 class="display h2">Sua solicitação</h1>
+    <p class="lead">Revise os itens e conte os detalhes. Isto é uma <strong>solicitação</strong>, não uma compra: valor final, prazo e disponibilidade são confirmados com você pelo WhatsApp.</p>
+  </div>
+</section>
+<div class="order order--items-first">
+  <section class="tile" aria-labelledby="ped-form-title">
+    <div class="tile-pad">
+      <h2 id="ped-form-title" class="sr-only">Detalhes do pedido</h2>
+      <form class="form" id="order-form" novalidate>
+        <div class="field"><label for="o-perso">O que vai na personalização? <span class="opt">(opcional)</span></label>
+          <p class="hint" id="o-perso-hint">Nome, frase, ideia de arte. Se for foto, você envia depois na conversa.</p>
+          <textarea class="textarea" id="o-perso" maxlength="800" aria-describedby="o-perso-hint"></textarea></div>
+        <label class="check" for="o-foto"><input type="checkbox" id="o-foto"><span>Vou enviar foto(s) pelo WhatsApp</span></label>
+        <div class="two">
+          <div class="field"><label for="o-para">Para quem é? <span class="opt">(opcional)</span></label><input class="input" id="o-para" maxlength="80" placeholder="Ex.: minha irmã"></div>
+          <div class="field"><label for="o-ocasiao">Ocasião <span class="opt">(opcional)</span></label>
+            <select class="select" id="o-ocasiao"><option value="">Escolha</option><option>Aniversário</option><option>Namoro</option><option>Agradecimento</option><option>Amigo secreto</option><option>Só porque sim</option><option>Outra</option></select></div>
+        </div>
+        <div class="field"><label for="o-data">Para quando você precisa? <span class="opt">(opcional)</span></label><input class="input" id="o-data" type="date"><p class="hint">A data é um desejo. O prazo real é confirmado no atendimento.</p></div>
+        <fieldset><legend>Retirada ou entrega</legend>
+          <div class="radio-cards">
+            <label class="rcard"><input type="radio" name="entrega" value="Retirada em Itabuna" checked><span><strong>Retirar em Itabuna</strong><small>Local e horário combinados no atendimento</small></span></label>
+            <label class="rcard"><input type="radio" name="entrega" value="Entrega local em Itabuna (sob consulta)"><span><strong>Entrega em Itabuna</strong><small>Sob consulta, conforme o bairro</small></span></label>
+          </div>
+        </fieldset>
+        <div class="field" id="o-bairro-f" hidden><label for="o-bairro">Bairro</label><input class="input" id="o-bairro" maxlength="80" autocomplete="address-level3"></div>
+        <div class="field" id="o-nome-f"><label for="o-nome">Seu nome</label><input class="input" id="o-nome" maxlength="80" autocomplete="name" required><p class="err" id="o-nome-err" hidden>Escreva seu nome para a gente saber com quem fala.</p></div>
+        <div class="field"><label for="o-obs">Observações <span class="opt">(opcional)</span></label><textarea class="textarea" id="o-obs" maxlength="600"></textarea></div>
+        <div class="field" id="o-ok-f"><label class="check" for="o-ok"><input type="checkbox" id="o-ok" required><span>Entendi que esta é uma <strong>solicitação</strong>. O pedido só fica confirmado depois do atendimento pelo WhatsApp.</span></label><p class="err" id="o-ok-err" hidden>Marque para continuar.</p></div>
+        <p class="err" id="o-items-err" hidden>Sua seleção está vazia. Adicione pelo menos um item.</p>
+        <button class="btn btn--pink btn--block" type="submit">Revisar mensagem do WhatsApp</button>
+        <p class="small muted">Nada é salvo no site. Seus dados só vão para a mensagem que você mesmo envia. <a href="privacidade.html">Privacidade</a></p>
+      </form>
+    </div>
+  </section>
+  <aside class="order-aside tile tile--cream2" aria-labelledby="ped-items-title">
+    <div class="tile-pad" style="display:grid;gap:16px">
+      <div style="display:flex;justify-content:space-between;align-items:end;gap:10px;flex-wrap:wrap"><h2 id="ped-items-title" class="display h3">Itens</h2><a class="link-arrow" href="loja.html">Adicionar mais</a></div>
+      <div id="order-items"></div>
+    </div>
+  </aside>
+</div>
+</main>
+<div id="lib-footer"></div>
+</body>
+</html>

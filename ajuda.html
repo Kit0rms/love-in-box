@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ajuda Para Escolher · Love in Box</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Conte para quem é o presente, a ocasião e o orçamento. A Love in Box sugere opções pelo WhatsApp.">
+<meta name="theme-color" content="#FFFBF6">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Love in Box">
+<meta property="og:title" content="Ajuda Para Escolher · Love in Box">
+<meta property="og:description" content="Conte para quem é o presente, a ocasião e o orçamento. A Love in Box sugere opções pelo WhatsApp.">
+<meta property="og:image" content="assets/img/marca/hero-cafe-poster.jpg">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/png" href="assets/img/marca/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/img/marca/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script defer src="assets/js/config.js"></script>
+<script defer src="assets/js/catalogo.js"></script>
+<script defer src="assets/js/pages.js"></script>
+<script defer src="assets/js/app.js"></script>
+</head>
+<body data-page="ajuda">
+<div id="lib-header"></div>
+<main id="conteudo" class="page-shell" tabindex="-1" data-page="ajuda">
+<noscript><div class="tile tile-pad"><p>Ative o JavaScript do navegador para ver os presentes e enviar sua solicitação.</p></div></noscript>
+
+<section class="tile">
+  <div class="page-hero">
+    <nav class="crumbs" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Ajuda para escolher</span></nav>
+    <h1 class="display h2">A gente te ajuda a escolher</h1>
+    <p class="lead">Responda o básico. Sua resposta vira uma mensagem para o nosso WhatsApp, e a gente volta com sugestões.</p>
+  </div>
+</section>
+<div class="order">
+  <section class="tile" aria-labelledby="aj-form-title">
+    <div class="tile-pad">
+      <h2 id="aj-form-title" class="sr-only">Perguntas</h2>
+      <form class="form" id="help-form" novalidate>
+        <fieldset><legend>Para quem é o presente?</legend><div class="chips" data-chips="para"></div></fieldset>
+        <fieldset><legend>Qual é a ocasião?</legend><div class="chips" data-chips="ocasiao"></div></fieldset>
+        <fieldset><legend>Quanto você quer gastar?</legend><div class="chips" data-chips="orcamento"></div></fieldset>
+        <fieldset><legend>Do que a pessoa gosta? <span class="opt">(pode marcar mais de um)</span></legend><div class="chips" data-chips="gosta"></div></fieldset>
+        <div class="field"><label for="h-obs">Algo mais que a gente deva saber? <span class="opt">(opcional)</span></label><textarea class="textarea" id="h-obs" maxlength="600" placeholder="Ex.: ela adora café, tem um gato e faz aniversário dia 15."></textarea></div>
+        <div class="field" id="h-nome-f"><label for="h-nome">Seu nome</label><input class="input" id="h-nome" autocomplete="given-name" maxlength="80" required><p class="err" id="h-nome-err" hidden>Escreva seu nome para a gente saber com quem fala.</p></div>
+        <button class="btn btn--pink btn--block" type="submit">Pedir sugestões pelo WhatsApp</button>
+        <p class="small muted">Nada é salvo no site. A mensagem só é enviada quando você confirmar no WhatsApp.</p>
+      </form>
+    </div>
+  </section>
+  <aside class="order-aside tile tile--cream2" aria-labelledby="aj-ideas-title">
+    <div class="tile-pad" style="display:grid;gap:14px">
+      <div><p class="label muted">Enquanto isso</p><h2 id="aj-ideas-title" class="display h3">Itens dentro do que você marcou</h2></div>
+      <p class="small muted" id="ideas-note">Marque o orçamento e os gostos para filtrar.</p>
+      <ul class="items" id="ideas"></ul>
+      <a class="link-arrow" id="ideas-link" href="loja.html">Ver na loja<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </aside>
+</div>
+</main>
+<div id="lib-footer"></div>
+</body>
+</html>
