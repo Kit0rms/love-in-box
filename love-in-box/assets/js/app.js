@@ -185,7 +185,7 @@
   function showMessage(msg, opts) {
     opts = opts || {};
     var d = $("#msg-modal");
-    $("#msg-title").textContent = opts.titulo || "sua mensagem está pronta";
+    $("#msg-title").textContent = opts.titulo || "Sua mensagem está pronta";
     $("#msg-intro").textContent = opts.intro || "Confira o resumo. Ao enviar, a gente confirma valor, prazo e disponibilidade com você antes de produzir.";
     $("#msg-text").textContent = msg;
     var link = waLink(msg), a = $("#msg-wa"), pend = $("#msg-pend");
@@ -258,7 +258,7 @@
         '<div><h3 class="label">Categorias</h3><ul>' + cats + "</ul></div>" +
         '<div><h3 class="label">Ocasiões e temas</h3><ul>' + cols + "</ul></div>" +
         '<div><h3 class="label">Por orçamento</h3><ul>' + budget + '<li><a href="loja.html">Todos os presentes</a></li></ul></div>' +
-        '<a class="mega-feature" href="personalizados.html"><img src="assets/img/marca/cafe-servido.jpg" alt="" loading="lazy"><span>personalize com a sua foto</span></a>' +
+        '<a class="mega-feature" href="personalizados.html"><img src="assets/img/marca/cafe-servido.jpg" alt="" loading="lazy"><span>Personalize com a sua foto</span></a>' +
       "</div></div>" +
       "</header>";
   }
@@ -275,7 +275,7 @@
       '<div class="d-head"><span class="label">Menu</span><button class="icon-btn" type="button" data-close aria-label="Fechar menu">' + icon("close") + "</button></div>" +
       '<div class="d-body"><nav class="mnav" aria-label="Menu principal">' +
         '<a href="index.html">início' + icon("arrow") + "</a>" +
-        '<a href="loja.html">todos os presentes' + icon("arrow") + "</a>" +
+        '<a href="loja.html">Todos os presentes' + icon("arrow") + "</a>" +
         "<details><summary>categorias" + icon("down") + '</summary><div class="sub">' + cats + "</div></details>" +
         "<details><summary>ocasiões e temas" + icon("down") + '</summary><div class="sub">' + cols + "</div></details>" +
         '<a href="loja.html#categoria=boxes-e-kits">boxes e kits' + icon("arrow") + "</a>" +
@@ -291,12 +291,12 @@
   function drawersHTML() {
     return menuHTML() +
       '<dialog class="drawer" id="sel-drawer" aria-labelledby="sel-title">' +
-        '<div class="d-head"><h2 id="sel-title">minha seleção</h2><button class="icon-btn" type="button" data-close aria-label="Fechar seleção">' + icon("close") + "</button></div>" +
+        '<div class="d-head"><h2 id="sel-title">Minha seleção</h2><button class="icon-btn" type="button" data-close aria-label="Fechar seleção">' + icon("close") + "</button></div>" +
         '<div class="d-body" id="sel-body"></div>' +
         '<div class="d-foot" id="sel-foot"></div>' +
       "</dialog>" +
       '<dialog class="modal" id="msg-modal" aria-labelledby="msg-title">' +
-        '<div class="d-head"><h2 id="msg-title">sua mensagem está pronta</h2><button class="icon-btn" type="button" data-close aria-label="Fechar">' + icon("close") + "</button></div>" +
+        '<div class="d-head"><h2 id="msg-title">Sua mensagem está pronta</h2><button class="icon-btn" type="button" data-close aria-label="Fechar">' + icon("close") + "</button></div>" +
         '<div class="d-body" style="display:grid;gap:14px">' +
           '<p class="small muted" id="msg-intro"></p>' +
           '<pre class="msg-preview" id="msg-text" tabindex="0"></pre>' +
@@ -308,7 +308,7 @@
         "</div>" +
       "</dialog>" +
       (CFG.modoPrevia ? '<dialog class="modal" id="prev-modal" aria-labelledby="prev-title">' +
-        '<div class="d-head"><h2 id="prev-title">prévia do site</h2><button class="icon-btn" type="button" data-close aria-label="Fechar">' + icon("close") + "</button></div>" +
+        '<div class="d-head"><h2 id="prev-title">Prévia do site</h2><button class="icon-btn" type="button" data-close aria-label="Fechar">' + icon("close") + "</button></div>" +
         '<div class="d-body prose"><p>Esta é a primeira versão navegável. Preços seguem o controle de produtos de 26/10/2026 e ainda serão validados. Antes de publicar, falta definir:</p><ul>' +
         (CFG.pendencias || []).map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") +
         "</ul></div></dialog>" : "") +
@@ -324,7 +324,7 @@
     if (CFG.instagram) contato += '<li><a href="' + esc(CFG.instagram) + '" target="_blank" rel="noopener">Instagram</a></li>';
     contato += '<li><a href="ajuda.html">Fale com a gente</a></li>';
     return '<footer class="site-footer tile"><div class="ft">' +
-      '<div class="ft-brand"><img src="assets/img/marca/logo-love-in-box-320.png" alt="Love in Box" width="320" height="320" loading="lazy"><p>você escolhe para quem. a gente cuida do presente.</p></div>' +
+      '<div class="ft-brand"><img src="assets/img/marca/logo-love-in-box-320.png" alt="Love in Box" width="320" height="320" loading="lazy"><p>Você escolhe para quem. A gente cuida do presente.</p></div>' +
       '<div class="ft-cols">' +
         '<div><h2 class="label">Loja</h2><ul><li><a href="loja.html">Todos os presentes</a></li>' + cats + "</ul></div>" +
         '<div><h2 class="label">Ajuda</h2><ul><li><a href="ajuda.html">Ajuda para escolher</a></li><li><a href="montar.html">Montar do meu jeito</a></li><li><a href="como-funciona.html">Como funciona</a></li><li><a href="como-funciona.html#perguntas">Perguntas frequentes</a></li></ul></div>' +
@@ -371,7 +371,7 @@
     var body = $("#sel-body"), foot = $("#sel-foot"); if (!body) return;
     var items = Sel.items();
     if (!items.length) {
-      body.innerHTML = '<div class="empty"><img src="assets/img/icons/bow.png" alt="" width="256" height="256"><p class="h3 display">sua seleção está vazia</p><p class="muted small">Escolha os itens do presente e envie tudo junto em uma única solicitação.</p></div>';
+      body.innerHTML = '<div class="empty"><img src="assets/img/icons/bow.png" alt="" width="256" height="256"><p class="h3 display">Sua seleção está vazia</p><p class="muted small">Escolha os itens do presente e envie tudo junto em uma única solicitação.</p></div>';
       foot.innerHTML = '<a class="btn btn--dark btn--block" href="loja.html">Ver presentes</a><a class="btn btn--line btn--block" href="ajuda.html">Preciso de ajuda</a>';
     } else {
       body.innerHTML = '<ul class="items">' + items.map(function (i) { return itemRow(i); }).join("") + "</ul>" + totalHTML();
@@ -388,14 +388,33 @@
   var io = null;
   function reveal(root) {
     if (reduced || !("IntersectionObserver" in window)) return;
+    /* a animação repete sempre que o bloco volta à tela (para baixo ou para cima) */
     if (!io) io = new IntersectionObserver(function (ents) {
-      ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    $$("[data-rv]", root).forEach(function (el, i) {
-      if (el.classList.contains("rv")) return;
-      if (el.getBoundingClientRect().top > window.innerHeight * 0.95) {
-        el.classList.add("rv"); el.style.transitionDelay = ((i % 4) * 70) + "ms"; io.observe(el);
+      ents.forEach(function (en) {
+        if (en.isIntersecting && en.intersectionRatio >= 0.1) en.target.classList.add("in");
+        else if (!en.isIntersecting) en.target.classList.remove("in");
+      });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: [0, 0.1] });
+    /* trilhos com rolagem lateral (categorias, fotos) nunca ficam escondidos */
+    function inScroller(el) {
+      for (var n = el.parentElement; n && n !== document.body; n = n.parentElement) {
+        var ox = getComputedStyle(n).overflowX;
+        if (ox === "auto" || ox === "scroll") return true;
       }
+      return false;
+    }
+    var all = $$("[data-rv]", root).filter(function (el) { return !el.closest(".rail") && !inScroller(el); });
+    $$("main > section.tile:not([data-rv]), main .row-head:not([data-rv]), main .sec-head:not([data-rv])", root).forEach(function (el) {
+      if (!el.closest("[data-rv]")) all.push(el);
+    });
+    var n = 0;
+    all.forEach(function (el) {
+      if (el.classList.contains("rv")) return;
+      var top = el.getBoundingClientRect().top;
+      el.classList.add("rv");
+      if (top < window.innerHeight * 0.9) el.classList.add("in");
+      else el.style.transitionDelay = ((n++ % 4) * 80) + "ms";
+      io.observe(el);
     });
   }
 
@@ -457,7 +476,13 @@
 
   /* ---------------- montagem ---------------- */
   function mount() {
-    var page = document.body.getAttribute("data-page") || "";
+    /* o tipo de página vem do <body>, do <main> ou do nome do arquivo:
+       assim o conteúdo dinâmico aparece mesmo quando a hospedagem reescreve o <body> */
+    var mainEl = document.getElementById("conteudo");
+    var file = (location.pathname.split("/").pop() || "index.html").replace(/\.html$/, "");
+    var byFile = { "": "home", index: "home", "como-funciona": "como", "design-system": "ds" };
+    var page = document.body.getAttribute("data-page") || (mainEl && mainEl.getAttribute("data-page")) ||
+      (byFile.hasOwnProperty(file) ? byFile[file] : file) || "home";
     var h = $("#lib-header"); if (h) h.outerHTML = headerHTML(page);
     var f = $("#lib-footer"); if (f) f.outerHTML = footerHTML();
     document.body.insertAdjacentHTML("beforeend", drawersHTML());
@@ -479,8 +504,22 @@
 
     /* cabeçalho ao rolar */
     var hdr = $("#lib-hdr");
-    function onScroll() { hdr.classList.toggle("is-scrolled", window.scrollY > 8); }
-    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    var lastY = window.scrollY, ticking = false;
+    function lockedOpen() {
+      return !mega.hidden || hdr.contains(document.activeElement) && document.activeElement.matches("input, button[aria-expanded='true']") || document.querySelector("dialog[open]");
+    }
+    function setAway(a) { hdr.classList.toggle("is-hidden", a); document.body.classList.toggle("hdr-away", a); }
+    function onScroll() {
+      var y = window.scrollY, dy = y - lastY;
+      hdr.classList.toggle("is-scrolled", y > 8);
+      if (y <= 120 || lockedOpen()) setAway(false);
+      else if (dy > 6) setAway(true);
+      else if (dy < -6) setAway(false);
+      if (Math.abs(dy) > 6 || y <= 120) lastY = y;
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true }); onScroll();
+    hdr.addEventListener("focusin", function () { setAway(false); });
 
     /* adicionar à seleção (qualquer botão data-add) */
     document.addEventListener("click", function (e) {

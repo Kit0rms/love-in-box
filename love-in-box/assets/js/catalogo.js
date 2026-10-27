@@ -78,9 +78,9 @@ window.LIB_CATALOGO = {
       resumo: "A clássica da Love in Box: caneca branca com a foto, o nome, a frase ou a arte que você escolher.",
       personalizacao: ["Foto", "Nome", "Frase", "Arte pronta"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/caneca-branca-1.jpg", alt: "Mão segurando caneca branca com ilustrações de um gato preto e branco e as frases meu gatinho e fofinho" },
-        { src: "assets/img/produtos/caneca-branca-2.jpg", alt: "Lateral da caneca branca com ilustração do gato sentado e a frase meu gato" },
-        { src: "assets/img/produtos/caneca-branca-3.jpg", alt: "Lateral da caneca branca com o gato de língua de fora e a frase fofinho" }
+        { src: "assets/img/produtos/caneca-branca-1.jpg", alt: "Caneca branca com ilustrações de um gato preto e branco e as frases meu gato e cadê meu gato, sobre fundo bege" },
+        { src: "assets/img/produtos/caneca-branca-2.jpg", alt: "Caneca branca vista de frente com o gato sentado, o gato deitado e a frase meu gato" },
+        { src: "assets/img/produtos/caneca-branca-3.jpg", alt: "Caneca branca com o gato de língua de fora e as frases meu gatinho cinho e fofinho" }
       ],
       destaque: true, ordem: 1
     },
@@ -93,7 +93,10 @@ window.LIB_CATALOGO = {
       resumo: "Caneca personalizada com o interior e a alça em cor. As cores disponíveis são confirmadas no atendimento.",
       personalizacao: ["Foto", "Nome", "Frase", "Arte pronta"], personalizacaoProvisoria: true,
       variantes: [], /* PENDENTE: cores disponíveis */
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/caneca-colorida-1.jpg", alt: "Caneca branca com interior e alça vermelhos e frase pequena impressa" },
+        { src: "assets/img/produtos/caneca-colorida-2.jpg", alt: "Caneca branca com interior rosa, colher rosa e frase impressa" }
+      ],
       destaque: true, ordem: 2
     },
     {
@@ -104,7 +107,9 @@ window.LIB_CATALOGO = {
       preco: 59.90, precoTipo: "fixo", precoProvisorio: true,
       resumo: "A personalização aparece quando a bebida quente entra na caneca.",
       personalizacao: ["Foto", "Nome", "Frase"], personalizacaoProvisoria: true,
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/caneca-magica-1.jpg", alt: "Duas canecas mágicas, uma preta e outra com a arte de flores revelada" }
+      ],
       destaque: false, ordem: 3
     },
     {
@@ -126,7 +131,11 @@ window.LIB_CATALOGO = {
       preco: 29.90, precoTipo: "fixo", precoProvisorio: true,
       resumo: "Nove fotos suas no formato pequeno de foto instantânea, com ímã.",
       personalizacao: ["9 fotos"], personalizacaoProvisoria: true,
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/kit-fotos-imantadas-1.jpg", alt: "Fotos em formato de foto instantânea espalhadas ao lado de uma sacola Love in Box" },
+        { src: "assets/img/produtos/kit-fotos-imantadas-2.jpg", alt: "Fotos instantâneas de casais, família, bebê e cachorro sobre mesa bege" },
+        { src: "assets/img/produtos/kit-fotos-imantadas-3.jpg", alt: "Várias fotos instantâneas com moldura branca e pequenos detalhes coloridos" }
+      ],
       destaque: true, ordem: 5
     },
     {
@@ -137,7 +146,9 @@ window.LIB_CATALOGO = {
       preco: 69.90, precoTipo: "a-partir-de", precoProvisorio: true,
       resumo: "Presente montado sob encomenda na caixa Love in Box. Os itens e a personalização são combinados no atendimento.",
       personalizacao: ["Itens da box", "Foto", "Nome", "Mensagem"], personalizacaoProvisoria: true,
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/box-personalizada-1.jpg", alt: "Box de papel kraft aberta com caneca Com amor para você, café, bombons e itens de presente" }
+      ],
       destaque: true, ordem: 6
     },
     {
@@ -148,7 +159,11 @@ window.LIB_CATALOGO = {
       preco: 20.90, precoTipo: "fixo", precoProvisorio: true,
       resumo: "Para passar o café na hora e completar o presente.",
       personalizacao: [],
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/cafeteira-francesa-1.jpg", alt: "Cafeteira francesa preta vista de cima" },
+        { src: "assets/img/produtos/cafeteira-francesa-2.jpg", alt: "Cafeteira francesa preta com corpo de vidro" },
+        { src: "assets/img/produtos/cafeteira-francesa-3.jpg", alt: "Cafeteira francesa desmontada, mostrando êmbolo e filtro" }
+      ],
       destaque: false, ordem: 7
     },
     {
@@ -159,7 +174,9 @@ window.LIB_CATALOGO = {
       preco: 20.90, precoTipo: "fixo", precoProvisorio: true,
       resumo: "Infusor em formato de chaleira para preparar chá direto na caneca.",
       personalizacao: [],
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/infusor-chaleira-1.jpg", alt: "Caixa do infusor chaleira de vidro com filtro de inox" }
+      ],
       destaque: false, ordem: 8
     },
     {
@@ -170,7 +187,9 @@ window.LIB_CATALOGO = {
       preco: 12.90, precoTipo: "fixo", precoProvisorio: true,
       resumo: "Para preparar chá em folhas direto na caneca.",
       personalizacao: [],
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/infusor-cha-1.jpg", alt: "Infusores de chá em formato de coração e colheres sobre tecido claro" }
+      ],
       destaque: false, ordem: 9
     },
     {
@@ -181,7 +200,11 @@ window.LIB_CATALOGO = {
       preco: 14.90, precoTipo: "fixo", precoProvisorio: true,
       resumo: "Para misturar a bebida direto na caneca.",
       personalizacao: [],
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/mixer-1.jpg", alt: "Mixer elétrico rosa com haste de inox" },
+        { src: "assets/img/produtos/mixer-2.jpg", alt: "Kit com dois mixers elétricos, preto e verde, na embalagem" },
+        { src: "assets/img/produtos/mixer-3.jpg", alt: "Mixer elétrico rosa visto de cima" }
+      ],
       destaque: false, ordem: 10
     },
     {
@@ -192,7 +215,10 @@ window.LIB_CATALOGO = {
       preco: 12.90, precoTipo: "fixo", precoProvisorio: true,
       resumo: "Colher para acompanhar a caneca.",
       personalizacao: [],
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/colher-inox-1.jpg", alt: "Colheres de inox e douradas com cabo em formato de coração e flor" },
+        { src: "assets/img/produtos/colher-inox-2.jpg", alt: "Conjunto de colheres e infusores de coração em inox e dourado" }
+      ],
       destaque: false, ordem: 11
     },
     {
@@ -203,7 +229,11 @@ window.LIB_CATALOGO = {
       preco: 12.90, precoTipo: "fixo", precoProvisorio: true,
       resumo: "Um detalhe a mais para completar o presente.",
       personalizacao: [],
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/caneta-1.jpg", alt: "Quatro canetas em tons de marrom e bege seguradas na mão" },
+        { src: "assets/img/produtos/caneta-2.jpg", alt: "Canetas marrons e bege com detalhe de xícara" },
+        { src: "assets/img/produtos/caneta-3.jpg", alt: "Canetas em tons de marrom abertas na palma da mão" }
+      ],
       destaque: false, ordem: 12
     },
 

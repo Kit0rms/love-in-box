@@ -36,9 +36,10 @@
       var n = c.produtos.map(L.product).filter(function (p) { return p && all.indexOf(p) > -1; }).length;
       if (!n) return "";
       return '<a class="col-card" href="loja.html#colecao=' + esc(c.id) + '" data-rv>' +
-        '<img src="assets/img/icons/' + esc(c.icone) + '.png" alt="" width="256" height="256" loading="lazy">' +
-        '<span class="label">' + (c.tipo === "ocasiao" ? "Ocasião" : "Tema") + " · " + n + " itens</span>" +
-        "<h3>" + esc(c.nome) + "</h3><p>" + esc(c.resumo) + "</p></a>";
+        '<span class="col-ico"><img src="assets/img/icons/' + esc(c.icone) + '.png" alt="" width="256" height="256" loading="lazy"></span>' +
+        '<span class="label">' + (c.tipo === "ocasiao" ? "Ocasião" : "Tema") + " · " + n + (n === 1 ? " item" : " itens") + "</span>" +
+        "<h3>" + esc(c.nome) + "</h3><p>" + esc(c.resumo) + "</p>" +
+        '<span class="col-go">Ver presentes<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>';
     }).join("");
 
     var bud = $("[data-budget]");
@@ -141,8 +142,8 @@
     function render() {
       var list = filtered();
       var cat = L.category(state.categoria), col = L.collection(state.colecao), sub = L.subcategory(state.categoria, state.sub);
-      var title = sub ? sub.nome : cat ? cat.nome : col ? col.nome : "todos os presentes";
-      $("#shop-title").textContent = title.toLowerCase();
+      var title = sub ? sub.nome : cat ? cat.nome : col ? col.nome : "Todos os presentes";
+      $("#shop-title").textContent = title;
       $("#crumb-cur").textContent = cat ? cat.nome : col ? col.nome : "Loja";
       $("#shop-sub").textContent = cat ? cat.resumo : col ? col.resumo : "Canecas, fotos, boxes e complementos. Escolha e envie a solicitação.";
       document.title = (sub ? sub.nome : cat ? cat.nome : col ? col.nome : "Loja") + " · Love in Box";
@@ -198,7 +199,7 @@
 
     function notFound() {
       root.innerHTML = '<section class="tile"><div class="empty"><img src="assets/img/icons/sparkle.png" alt="" width="256" height="256">' +
-        '<h1 class="display h3">produto não encontrado</h1><p class="muted small">O link pode estar incompleto ou o item saiu do catálogo.</p>' +
+        '<h1 class="display h3">Produto não encontrado</h1><p class="muted small">O link pode estar incompleto ou o item saiu do catálogo.</p>' +
         '<a class="btn btn--dark" href="loja.html">Ver todos os presentes</a></div></section>';
       $("#related-wrap").hidden = true; $("#buybar").innerHTML = "";
     }
@@ -277,7 +278,7 @@
         var msg = kind === "aviso"
           ? "Olá, Love in Box! Quero ser avisada(o) quando o item *" + prod.nome + "* voltar ao estoque."
           : "Olá, Love in Box! Tenho interesse no item *" + prod.nome + "*, que está em estudo. Podem me avisar quando houver novidade?";
-        L.showMessage(msg, { titulo: kind === "aviso" ? "pedir aviso" : "registrar interesse", intro: "Envie esta mensagem pelo WhatsApp. A gente responde quando houver novidade." });
+        L.showMessage(msg, { titulo: kind === "aviso" ? "Pedir aviso" : "Registrar interesse", intro: "Envie esta mensagem pelo WhatsApp. A gente responde quando houver novidade." });
       }
       var main = $("#main-cta");
       if (main && "IntersectionObserver" in window) {
@@ -314,7 +315,7 @@
       var items = L.Sel.items();
       box.innerHTML = items.length
         ? '<ul class="items">' + items.map(function (i) { return L.itemRow(i); }).join("") + "</ul>" + L.totalHTML()
-        : '<div class="empty" style="padding:24px 0"><img src="assets/img/icons/bow.png" alt="" width="256" height="256"><p class="display h3">nenhum item ainda</p><p class="small muted">Escolha na loja, monte do seu jeito ou peça ajuda.</p><div class="btn-row" style="justify-content:center"><a class="btn btn--dark btn--sm" href="loja.html">Ver presentes</a><a class="btn btn--line btn--sm" href="ajuda.html">Preciso de ajuda</a></div></div>';
+        : '<div class="empty" style="padding:24px 0"><img src="assets/img/icons/bow.png" alt="" width="256" height="256"><p class="display h3">Nenhum item ainda</p><p class="small muted">Escolha na loja, monte do seu jeito ou peça ajuda.</p><div class="btn-row" style="justify-content:center"><a class="btn btn--dark btn--sm" href="loja.html">Ver presentes</a><a class="btn btn--line btn--sm" href="ajuda.html">Preciso de ajuda</a></div></div>';
       if (items.length) $("#o-items-err").hidden = true;
     }
     L.bindItems(box);
@@ -416,7 +417,7 @@
       if (vals("gosta").length) lines.push("*A pessoa gosta de:* " + vals("gosta").join(", "));
       var obs = $("#h-obs").value.trim(); if (obs) lines.push("*Detalhes:* " + obs);
       lines.push("", "*Meu nome:* " + nome);
-      L.showMessage(lines.join("\n"), { titulo: "pedido de sugestão", intro: "Confira e envie. A gente responde com sugestões de presente." });
+      L.showMessage(lines.join("\n"), { titulo: "Pedido de sugestão", intro: "Confira e envie. A gente responde com sugestões de presente." });
     });
   }
 
