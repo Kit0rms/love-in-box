@@ -108,7 +108,7 @@ window.LIB_CATALOGO = {
       resumo: "A personalização aparece quando a bebida quente entra na caneca.",
       personalizacao: ["Foto", "Nome", "Frase"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/caneca-magica-1.jpg", alt: "Duas canecas mágicas, uma preta e outra com a arte de flores revelada" }
+        { src: "assets/img/produtos/caneca-magica-e1.jpg", alt: "Duas canecas mágicas lado a lado: uma preta fechada e outra com a arte de rosas e a frase seja amor por onde você for revelada" }
       ],
       destaque: false, ordem: 3
     },
@@ -120,7 +120,10 @@ window.LIB_CATALOGO = {
       preco: 39.90, precoTipo: "fixo", precoProvisorio: true,
       resumo: "Modelo em estudo. Ainda não está disponível para pedido.",
       personalizacao: [],
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/caneca-3d-tematica-e1.jpg", alt: "Caneca 3D em formato de capivara, cor caramelo, sobre fundo bege" },
+        { src: "assets/img/produtos/caneca-3d-tematica-e2.jpg", alt: "Caneca 3D preta em formato de caldeirão com brasão dourado" }
+      ],
       destaque: false, ordem: 4
     },
     {
@@ -160,9 +163,7 @@ window.LIB_CATALOGO = {
       resumo: "Para passar o café na hora e completar o presente.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/cafeteira-francesa-1.jpg", alt: "Cafeteira francesa preta vista de cima" },
-        { src: "assets/img/produtos/cafeteira-francesa-2.jpg", alt: "Cafeteira francesa preta com corpo de vidro" },
-        { src: "assets/img/produtos/cafeteira-francesa-3.jpg", alt: "Cafeteira francesa desmontada, mostrando êmbolo e filtro" }
+        { src: "assets/img/produtos/cafeteira-francesa-e1.jpg", alt: "Cafeteira francesa de vidro com estrutura preta sobre fundo bege" }
       ],
       destaque: false, ordem: 7
     },
@@ -175,7 +176,7 @@ window.LIB_CATALOGO = {
       resumo: "Infusor em formato de chaleira para preparar chá direto na caneca.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/infusor-chaleira-1.jpg", alt: "Caixa do infusor chaleira de vidro com filtro de inox" }
+        { src: "assets/img/produtos/infusor-chaleira-e1.jpg", alt: "Chaleira de vidro com infusor de inox e chá dentro, sobre fundo bege" }
       ],
       destaque: false, ordem: 8
     },
