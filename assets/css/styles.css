@@ -912,3 +912,31 @@ main > .row-wrap{ margin-top: var(--sec); }
 .tip-n{ width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--bg); color: var(--deep-ink); font-family: var(--f-display); font-weight: 800; font-size: 1.05rem; box-shadow: inset 0 0 0 1.5px var(--line-2); }
 .tips h4{ font-size: var(--fs-base); font-weight: 800; line-height: 1.2; margin-bottom: 2px; }
 .tips p{ color: var(--ink-2); font-size: var(--fs-sm); line-height: 1.45; }
+
+/* home: personalização + ocasiões num bloco só */
+.combo{ padding: var(--pad); display: grid; gap: var(--s6); }
+.combo-perso{ display: grid; gap: var(--s5); align-items: center; }
+.combo-media{ position: relative; background: var(--sand); border-radius: var(--r-sm); aspect-ratio: 4 / 3; overflow: hidden; }
+.combo-copy{ display: flex; flex-direction: column; gap: var(--s4); min-width: 0; }
+.combo-copy .label{ color: var(--ink-2); }
+.combo-copy .lead{ max-width: 46ch; }
+.combo-copy .btn-row{ margin-top: var(--s2); }
+.combo-occ{ display: grid; gap: var(--s5); padding-top: var(--s6); border-top: 1px solid var(--line-2); min-width: 0; }
+.combo-head{ display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: var(--s3) var(--s5); }
+.combo-head .label{ color: var(--ink-2); margin-bottom: var(--s2); }
+.combo-head .sec-sub{ margin-top: var(--s2); }
+.combo .budget{ margin-top: 0; padding-top: 0; border-top: 0; gap: var(--s3); }
+@media (min-width: 900px){
+  .combo-perso{ grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s7); }
+  .combo-media{ aspect-ratio: 5 / 4; }
+}
+
+/* home: box — texto centralizado na altura, sem vazio em cima */
+.box-feature .feature-media{ min-height: 0; aspect-ratio: 4 / 3; }
+.box-feature .feature-copy{ justify-content: center; gap: var(--s4); }
+.box-feature .feature-copy .btn-row{ margin-top: var(--s2); }
+.box-feature .lead{ max-width: 46ch; }
+@media (min-width: 900px){
+  .box-feature{ min-height: 0; }
+  .box-feature .feature-media{ aspect-ratio: auto; min-height: 440px; }
+}

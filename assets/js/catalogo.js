@@ -55,16 +55,16 @@ window.LIB_CATALOGO = {
   colecoes: [
     { id: "para-quem-ama-cafe", nome: "Para quem ama café", tipo: "tema", icone: "bean",
       resumo: "Caneca, cafeteira e os detalhes do café de todo dia.",
-      produtos: ["caneca-branca", "caneca-colorida", "cafeteira-francesa", "colher-inox", "mixer", "caneca-magica"] },
+      produtos: ["kit-momento-cafe", "caneca-branca", "caneca-colorida", "cafeteira-francesa", "colher-inox", "mixer"] },
     { id: "cha-e-aconchego", nome: "Chá e aconchego", tipo: "tema", icone: "sparkle",
       resumo: "Para quem prefere uma xícara quente no fim do dia.",
       produtos: ["infusor-cha", "infusor-chaleira", "caneca-colorida", "caneca-branca"] },
     { id: "lembrancas-com-foto", nome: "Lembranças com foto", tipo: "tema", icone: "heart",
       resumo: "Fotos de vocês transformadas em presente.",
-      produtos: ["kit-fotos-imantadas", "caneca-branca", "caneca-colorida", "box-personalizada"] },
+      produtos: ["kit-memorias", "kit-fotos-imantadas", "caneca-branca", "box-personalizada"] },
     { id: "aniversario", nome: "Aniversário", tipo: "ocasiao", icone: "bow",
       resumo: "Presentes personalizados com cara de festa.",
-      produtos: ["box-personalizada", "caneca-branca", "kit-fotos-imantadas", "caneca-colorida"] }
+      produtos: ["kit-momento-cafe", "kit-memorias", "box-personalizada", "caneca-branca"] }
   ],
 
   /* ---------------- PRODUTOS ---------------- */
@@ -108,7 +108,7 @@ window.LIB_CATALOGO = {
       resumo: "A personalização aparece quando a bebida quente entra na caneca.",
       personalizacao: ["Foto", "Nome", "Frase"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/caneca-magica-1.jpg", alt: "Duas canecas mágicas, uma preta e outra com a arte de flores revelada" }
+        { src: "assets/img/produtos/caneca-magica-e1.jpg", alt: "Duas canecas mágicas lado a lado: uma preta fechada e outra com a arte de rosas e a frase seja amor por onde você for revelada" }
       ],
       destaque: false, ordem: 3
     },
@@ -120,7 +120,10 @@ window.LIB_CATALOGO = {
       preco: 39.90, precoTipo: "fixo", precoProvisorio: true,
       resumo: "Modelo em estudo. Ainda não está disponível para pedido.",
       personalizacao: [],
-      imagens: [],
+      imagens: [
+        { src: "assets/img/produtos/caneca-3d-tematica-e1.jpg", alt: "Caneca 3D em formato de capivara, cor caramelo, sobre fundo bege" },
+        { src: "assets/img/produtos/caneca-3d-tematica-e2.jpg", alt: "Caneca 3D preta em formato de caldeirão com brasão dourado" }
+      ],
       destaque: false, ordem: 4
     },
     {
@@ -152,6 +155,32 @@ window.LIB_CATALOGO = {
       destaque: true, ordem: 6
     },
     {
+      id: "kit-momento-cafe",
+      nome: "Kit Momento Café",
+      categoria: "boxes-e-kits", subcategoria: null,
+      status: "em-venda",
+      preco: 119.90, precoTipo: "fixo", precoProvisorio: true,
+      resumo: "Caneca personalizada + prensa francesa 325 ml + colher inox + café gourmet 3 Corações + box pronta para presentear.",
+      personalizacao: ["Letra, nome ou arte da caneca", "Mensagem do cartão"], personalizacaoProvisoria: true,
+      imagens: [
+        { src: "assets/img/produtos/kit-momento-cafe-1.jpg", alt: "Kit Momento Café na box Love in Box com caneca com inicial A, prensa francesa, colher dourada, café gourmet e cartão de aniversário" }
+      ],
+      destaque: false, ordem: 6.5
+    },
+    {
+      id: "kit-memorias",
+      nome: "Kit Memórias",
+      categoria: "boxes-e-kits", subcategoria: null,
+      status: "em-venda",
+      preco: 79.90, precoTipo: "fixo", precoProvisorio: true,
+      resumo: "Caneca personalizada + 1 drip coffee ou 1 cappuccino 3 Corações + 2 tabletes pequenos de chocolate + 9 fotos estilo Instax + colher de aço inox + box pronta para presentear.",
+      personalizacao: ["Arte ou frase da caneca", "9 fotos", "Escolha: drip coffee ou cappuccino"], personalizacaoProvisoria: true,
+      imagens: [
+        { src: "assets/img/produtos/kit-memorias-1.jpg", alt: "Kit Memórias na box Love in Box com café drip, bombons, fotos instantâneas, colher dourada e caneca com versículo" }
+      ],
+      destaque: false, ordem: 6.6
+    },
+    {
       id: "cafeteira-francesa",
       nome: "Cafeteira francesa",
       categoria: "complementos", subcategoria: "cafe-e-cha",
@@ -160,9 +189,7 @@ window.LIB_CATALOGO = {
       resumo: "Para passar o café na hora e completar o presente.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/cafeteira-francesa-1.jpg", alt: "Cafeteira francesa preta vista de cima" },
-        { src: "assets/img/produtos/cafeteira-francesa-2.jpg", alt: "Cafeteira francesa preta com corpo de vidro" },
-        { src: "assets/img/produtos/cafeteira-francesa-3.jpg", alt: "Cafeteira francesa desmontada, mostrando êmbolo e filtro" }
+        { src: "assets/img/produtos/cafeteira-francesa-e1.jpg", alt: "Cafeteira francesa de vidro com estrutura preta sobre fundo bege" }
       ],
       destaque: false, ordem: 7
     },
@@ -175,7 +202,7 @@ window.LIB_CATALOGO = {
       resumo: "Infusor em formato de chaleira para preparar chá direto na caneca.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/infusor-chaleira-1.jpg", alt: "Caixa do infusor chaleira de vidro com filtro de inox" }
+        { src: "assets/img/produtos/infusor-chaleira-e1.jpg", alt: "Chaleira de vidro com infusor de inox e chá dentro, sobre fundo bege" }
       ],
       destaque: false, ordem: 8
     },
@@ -188,7 +215,7 @@ window.LIB_CATALOGO = {
       resumo: "Para preparar chá em folhas direto na caneca.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/infusor-cha-1.jpg", alt: "Infusores de chá em formato de coração e colheres sobre tecido claro" }
+        { src: "assets/img/produtos/infusor-cha-e1.jpg", alt: "Quatro infusores de chá de inox em formato de coração, com cabo de coração vazado, sobre fundo bege" }
       ],
       destaque: false, ordem: 9
     },
@@ -216,8 +243,7 @@ window.LIB_CATALOGO = {
       resumo: "Colher para acompanhar a caneca.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/colher-inox-1.jpg", alt: "Colheres de inox e douradas com cabo em formato de coração e flor" },
-        { src: "assets/img/produtos/colher-inox-2.jpg", alt: "Conjunto de colheres e infusores de coração em inox e dourado" }
+        { src: "assets/img/produtos/colher-inox-e1.jpg", alt: "Quatro colheres douradas, duas com ponta em coração e duas em formato de flor, sobre fundo bege" }
       ],
       destaque: false, ordem: 11
     },
