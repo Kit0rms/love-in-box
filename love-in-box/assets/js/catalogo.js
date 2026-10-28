@@ -55,16 +55,16 @@ window.LIB_CATALOGO = {
   colecoes: [
     { id: "para-quem-ama-cafe", nome: "Para quem ama café", tipo: "tema", icone: "bean",
       resumo: "Caneca, cafeteira e os detalhes do café de todo dia.",
-      produtos: ["caneca-branca", "caneca-colorida", "cafeteira-francesa", "colher-inox", "mixer", "caneca-magica"] },
+      produtos: ["kit-momento-cafe", "caneca-branca", "caneca-colorida", "cafeteira-francesa", "colher-inox", "mixer"] },
     { id: "cha-e-aconchego", nome: "Chá e aconchego", tipo: "tema", icone: "sparkle",
       resumo: "Para quem prefere uma xícara quente no fim do dia.",
       produtos: ["infusor-cha", "infusor-chaleira", "caneca-colorida", "caneca-branca"] },
     { id: "lembrancas-com-foto", nome: "Lembranças com foto", tipo: "tema", icone: "heart",
       resumo: "Fotos de vocês transformadas em presente.",
-      produtos: ["kit-fotos-imantadas", "caneca-branca", "caneca-colorida", "box-personalizada"] },
+      produtos: ["kit-memorias", "kit-fotos-imantadas", "caneca-branca", "box-personalizada"] },
     { id: "aniversario", nome: "Aniversário", tipo: "ocasiao", icone: "bow",
       resumo: "Presentes personalizados com cara de festa.",
-      produtos: ["box-personalizada", "caneca-branca", "kit-fotos-imantadas", "caneca-colorida"] }
+      produtos: ["kit-momento-cafe", "kit-memorias", "box-personalizada", "caneca-branca"] }
   ],
 
   /* ---------------- PRODUTOS ---------------- */
@@ -153,6 +153,32 @@ window.LIB_CATALOGO = {
         { src: "assets/img/produtos/box-personalizada-1.jpg", alt: "Box de papel kraft aberta com caneca Com amor para você, café, bombons e itens de presente" }
       ],
       destaque: true, ordem: 6
+    },
+    {
+      id: "kit-momento-cafe",
+      nome: "Kit Momento Café",
+      categoria: "boxes-e-kits", subcategoria: null,
+      status: "em-venda",
+      preco: 119.90, precoTipo: "fixo", precoProvisorio: true,
+      resumo: "Caneca personalizada + prensa francesa 325 ml + colher inox + café gourmet 3 Corações + box pronta para presentear.",
+      personalizacao: ["Letra, nome ou arte da caneca", "Mensagem do cartão"], personalizacaoProvisoria: true,
+      imagens: [
+        { src: "assets/img/produtos/kit-momento-cafe-1.jpg", alt: "Kit Momento Café na box Love in Box com caneca com inicial A, prensa francesa, colher dourada, café gourmet e cartão de aniversário" }
+      ],
+      destaque: false, ordem: 6.5
+    },
+    {
+      id: "kit-memorias",
+      nome: "Kit Memórias",
+      categoria: "boxes-e-kits", subcategoria: null,
+      status: "em-venda",
+      preco: 79.90, precoTipo: "fixo", precoProvisorio: true,
+      resumo: "Caneca personalizada + 1 drip coffee ou 1 cappuccino 3 Corações + 2 tabletes pequenos de chocolate + 9 fotos estilo Instax + colher de aço inox + box pronta para presentear.",
+      personalizacao: ["Arte ou frase da caneca", "9 fotos", "Escolha: drip coffee ou cappuccino"], personalizacaoProvisoria: true,
+      imagens: [
+        { src: "assets/img/produtos/kit-memorias-1.jpg", alt: "Kit Memórias na box Love in Box com café drip, bombons, fotos instantâneas, colher dourada e caneca com versículo" }
+      ],
+      destaque: false, ordem: 6.6
     },
     {
       id: "cafeteira-francesa",
