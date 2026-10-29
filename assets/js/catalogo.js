@@ -18,7 +18,7 @@
 
 window.LIB_CATALOGO = {
 
-  atualizadoEm: "2026-10-26",
+  atualizadoEm: "2026-10-29",
 
   /* ---------------- STATUS ----------------
      pedido: o que o botão principal faz
@@ -40,7 +40,7 @@ window.LIB_CATALOGO = {
       resumo: "Personalizadas com foto, nome, frase ou arte." , subcategorias: [] },
     { id: "fotos-e-lembrancas", nome: "Fotos e lembranças", icone: "heart",
       resumo: "Momentos impressos para guardar e presentear.", subcategorias: [] },
-    { id: "boxes-e-kits", nome: "Boxes e kits", icone: "bow",
+    { id: "boxes-e-kits", nome: "Boxes e kits", icone: "bow", capa: "kit-momento-cafe",
       resumo: "Presentes montados e embalados para entregar.", subcategorias: [] },
     { id: "complementos", nome: "Complementos", icone: "bean",
       resumo: "Para completar o presente.",
@@ -78,9 +78,9 @@ window.LIB_CATALOGO = {
       resumo: "A clássica da Love in Box: caneca branca com a foto, o nome, a frase ou a arte que você escolher.",
       personalizacao: ["Foto", "Nome", "Frase", "Arte pronta"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/caneca-branca-1.jpg", alt: "Caneca branca com ilustrações de um gato preto e branco e as frases meu gato e cadê meu gato, sobre fundo bege" },
-        { src: "assets/img/produtos/caneca-branca-2.jpg", alt: "Caneca branca vista de frente com o gato sentado, o gato deitado e a frase meu gato" },
-        { src: "assets/img/produtos/caneca-branca-3.jpg", alt: "Caneca branca com o gato de língua de fora e as frases meu gatinho cinho e fofinho" }
+        { src: "assets/img/produtos/caneca-branca-1.webp", alt: "Caneca branca com ilustrações de um gato preto e branco e as frases meu gato e cadê meu gato, sobre fundo bege" },
+        { src: "assets/img/produtos/caneca-branca-2.webp", alt: "Caneca branca vista de frente com o gato sentado, o gato deitado e a frase meu gato" },
+        { src: "assets/img/produtos/caneca-branca-3.webp", alt: "Caneca branca com o gato de língua de fora e as frases meu gatinho cinho e fofinho" }
       ],
       destaque: true, ordem: 1
     },
@@ -94,10 +94,10 @@ window.LIB_CATALOGO = {
       personalizacao: ["Foto", "Nome", "Frase", "Arte pronta"], personalizacaoProvisoria: true,
       variantes: [], /* PENDENTE: cores disponíveis */
       imagens: [
-        { src: "assets/img/produtos/caneca-colorida-1.jpg", alt: "Caneca branca com interior e alça vermelhos e frase pequena impressa" },
-        { src: "assets/img/produtos/caneca-colorida-2.jpg", alt: "Caneca branca com interior rosa, colher rosa e frase impressa" }
+        { src: "assets/img/produtos/caneca-colorida-1.webp", alt: "Caneca branca com interior e alça vermelhos e frase pequena impressa" },
+        { src: "assets/img/produtos/caneca-colorida-2.webp", alt: "Caneca branca com interior rosa, colher rosa e frase impressa" }
       ],
-      destaque: true, ordem: 2
+      destaque: false, ordem: 2
     },
     {
       id: "caneca-magica",
@@ -108,7 +108,7 @@ window.LIB_CATALOGO = {
       resumo: "A personalização aparece quando a bebida quente entra na caneca.",
       personalizacao: ["Foto", "Nome", "Frase"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/caneca-magica-e1.jpg", alt: "Duas canecas mágicas lado a lado: uma preta fechada e outra com a arte de rosas e a frase seja amor por onde você for revelada" }
+        { src: "assets/img/produtos/caneca-magica-e1.webp", alt: "Duas canecas mágicas lado a lado: uma preta fechada e outra com a arte de rosas e a frase seja amor por onde você for revelada" }
       ],
       destaque: false, ordem: 3
     },
@@ -121,8 +121,8 @@ window.LIB_CATALOGO = {
       resumo: "Modelo em estudo. Ainda não está disponível para pedido.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/caneca-3d-tematica-e1.jpg", alt: "Caneca 3D em formato de capivara, cor caramelo, sobre fundo bege" },
-        { src: "assets/img/produtos/caneca-3d-tematica-e2.jpg", alt: "Caneca 3D preta em formato de caldeirão com brasão dourado" }
+        { src: "assets/img/produtos/caneca-3d-tematica-e1.webp", alt: "Caneca 3D em formato de capivara, cor caramelo, sobre fundo bege" },
+        { src: "assets/img/produtos/caneca-3d-tematica-e2.webp", alt: "Caneca 3D preta em formato de caldeirão com brasão dourado" }
       ],
       destaque: false, ordem: 4
     },
@@ -135,11 +135,11 @@ window.LIB_CATALOGO = {
       resumo: "Nove fotos suas no formato pequeno de foto instantânea, com ímã.",
       personalizacao: ["9 fotos"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/kit-fotos-imantadas-1.jpg", alt: "Fotos em formato de foto instantânea espalhadas ao lado de uma sacola Love in Box" },
-        { src: "assets/img/produtos/kit-fotos-imantadas-2.jpg", alt: "Fotos instantâneas de casais, família, bebê e cachorro sobre mesa bege" },
-        { src: "assets/img/produtos/kit-fotos-imantadas-3.jpg", alt: "Várias fotos instantâneas com moldura branca e pequenos detalhes coloridos" }
+        { src: "assets/img/produtos/kit-fotos-imantadas-1.webp", alt: "Fotos em formato de foto instantânea espalhadas ao lado de uma sacola Love in Box" },
+        { src: "assets/img/produtos/kit-fotos-imantadas-2.webp", alt: "Fotos instantâneas de casais, família, bebê e cachorro sobre mesa bege" },
+        { src: "assets/img/produtos/kit-fotos-imantadas-3.webp", alt: "Várias fotos instantâneas com moldura branca e pequenos detalhes coloridos" }
       ],
-      destaque: true, ordem: 5
+      destaque: false, ordem: 5
     },
     {
       id: "box-personalizada",
@@ -150,9 +150,9 @@ window.LIB_CATALOGO = {
       resumo: "Presente montado sob encomenda na caixa Love in Box. Os itens e a personalização são combinados no atendimento.",
       personalizacao: ["Itens da box", "Foto", "Nome", "Mensagem"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/box-personalizada-1.jpg", alt: "Box de papel kraft aberta com caneca Com amor para você, café, bombons e itens de presente" }
+        { src: "assets/img/produtos/box-personalizada-1.webp", alt: "Box de papel kraft aberta com caneca Com amor para você, café, bombons e itens de presente" }
       ],
-      destaque: true, ordem: 6
+      destaque: false, ordem: 6
     },
     {
       id: "kit-momento-cafe",
@@ -163,9 +163,9 @@ window.LIB_CATALOGO = {
       resumo: "Caneca personalizada + prensa francesa 325 ml + colher inox + café gourmet 3 Corações + box pronta para presentear.",
       personalizacao: ["Letra, nome ou arte da caneca", "Mensagem do cartão"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/kit-momento-cafe-1.jpg", alt: "Kit Momento Café na box Love in Box com caneca com inicial A, prensa francesa, colher dourada, café gourmet e cartão de aniversário" }
+        { src: "assets/img/produtos/kit-momento-cafe-1.webp", alt: "Kit Momento Café na box Love in Box com caneca com inicial A, prensa francesa, colher dourada, café gourmet e cartão de aniversário" }
       ],
-      destaque: false, ordem: 6.5
+      destaque: true, ordem: 6.5
     },
     {
       id: "kit-memorias",
@@ -176,7 +176,7 @@ window.LIB_CATALOGO = {
       resumo: "Caneca personalizada + 1 drip coffee ou 1 cappuccino 3 Corações + 2 tabletes pequenos de chocolate + 9 fotos estilo Instax + colher de aço inox + box pronta para presentear.",
       personalizacao: ["Arte ou frase da caneca", "9 fotos", "Escolha: drip coffee ou cappuccino"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/kit-memorias-1.jpg", alt: "Kit Memórias na box Love in Box com café drip, bombons, fotos instantâneas, colher dourada e caneca com versículo" }
+        { src: "assets/img/produtos/kit-memorias-1.webp", alt: "Kit Memórias na box Love in Box com café drip, bombons, fotos instantâneas, colher dourada e caneca com versículo" }
       ],
       destaque: false, ordem: 6.6
     },
@@ -189,9 +189,9 @@ window.LIB_CATALOGO = {
       resumo: "Caneca personalizada de 325 ml com interior e alça amarelos + Ferrero Rocher com 3 unidades ou chocolate conforme disponibilidade + balão metalizado de coração + tag de parabéns + sacola decorada com papel de seda e laço de cetim dourado, pronta para presentear.",
       personalizacao: ["Arte ou frase da caneca", "Mensagem da tag"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/kit-irmas-do-coracao-1.jpg", alt: "Kit Irmãs do Coração: sacola Love in Box com papel de seda, laço dourado e tag de parabéns, caneca com interior e alça amarelos, Ferrero Rocher e balão de coração dourado" }
+        { src: "assets/img/produtos/kit-irmas-do-coracao-1.webp", alt: "Kit Irmãs do Coração: sacola Love in Box com papel de seda, laço dourado e tag de parabéns, caneca com interior e alça amarelos, Ferrero Rocher e balão de coração dourado" }
       ],
-      destaque: false, ordem: 6.7
+      destaque: true, ordem: 6.7
     },
     {
       id: "kit-novo-ciclo",
@@ -202,9 +202,9 @@ window.LIB_CATALOGO = {
       resumo: "Caneca branca personalizada de 325 ml com frase de felicitação + balão metalizado de coração dourado + laço de cetim dourado feito à mão + sacola decorada com papel de seda, pronta para presentear.",
       personalizacao: ["Frase da caneca"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/kit-novo-ciclo-1.jpg", alt: "Kit Novo Ciclo: sacola Love in Box com papel de seda, caneca branca com frase de felicitação, laço dourado e balão de coração dourado" }
+        { src: "assets/img/produtos/kit-novo-ciclo-1.webp", alt: "Kit Novo Ciclo: sacola Love in Box com papel de seda, caneca branca com frase de felicitação, laço dourado e balão de coração dourado" }
       ],
-      destaque: false, ordem: 6.8
+      destaque: true, ordem: 6.8
     },
     {
       id: "cafeteira-francesa",
@@ -215,7 +215,7 @@ window.LIB_CATALOGO = {
       resumo: "Para passar o café na hora e completar o presente.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/cafeteira-francesa-e1.jpg", alt: "Cafeteira francesa de vidro com estrutura preta sobre fundo bege" }
+        { src: "assets/img/produtos/cafeteira-francesa-e1.webp", alt: "Cafeteira francesa de vidro com estrutura preta sobre fundo bege" }
       ],
       destaque: false, ordem: 7
     },
@@ -228,7 +228,7 @@ window.LIB_CATALOGO = {
       resumo: "Infusor em formato de chaleira para preparar chá direto na caneca.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/infusor-chaleira-e1.jpg", alt: "Chaleira de vidro com infusor de inox e chá dentro, sobre fundo bege" }
+        { src: "assets/img/produtos/infusor-chaleira-e1.webp", alt: "Chaleira de vidro com infusor de inox e chá dentro, sobre fundo bege" }
       ],
       destaque: false, ordem: 8
     },
@@ -241,7 +241,7 @@ window.LIB_CATALOGO = {
       resumo: "Para preparar chá em folhas direto na caneca.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/infusor-cha-e1.jpg", alt: "Quatro infusores de chá de inox em formato de coração, com cabo de coração vazado, sobre fundo bege" }
+        { src: "assets/img/produtos/infusor-cha-e1.webp", alt: "Quatro infusores de chá de inox em formato de coração, com cabo de coração vazado, sobre fundo bege" }
       ],
       destaque: false, ordem: 9
     },
@@ -254,9 +254,9 @@ window.LIB_CATALOGO = {
       resumo: "Para misturar a bebida direto na caneca.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/mixer-1.jpg", alt: "Mixer elétrico rosa com haste de inox" },
-        { src: "assets/img/produtos/mixer-2.jpg", alt: "Kit com dois mixers elétricos, preto e verde, na embalagem" },
-        { src: "assets/img/produtos/mixer-3.jpg", alt: "Mixer elétrico rosa visto de cima" }
+        { src: "assets/img/produtos/mixer-1.webp", alt: "Mixer elétrico rosa com haste de inox" },
+        { src: "assets/img/produtos/mixer-2.webp", alt: "Kit com dois mixers elétricos, preto e verde, na embalagem" },
+        { src: "assets/img/produtos/mixer-3.webp", alt: "Mixer elétrico rosa visto de cima" }
       ],
       destaque: false, ordem: 10
     },
@@ -269,7 +269,7 @@ window.LIB_CATALOGO = {
       resumo: "Colher para acompanhar a caneca.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/colher-inox-e1.jpg", alt: "Quatro colheres douradas, duas com ponta em coração e duas em formato de flor, sobre fundo bege" }
+        { src: "assets/img/produtos/colher-inox-e1.webp", alt: "Quatro colheres douradas, duas com ponta em coração e duas em formato de flor, sobre fundo bege" }
       ],
       destaque: false, ordem: 11
     },
@@ -282,9 +282,9 @@ window.LIB_CATALOGO = {
       resumo: "Um detalhe a mais para completar o presente.",
       personalizacao: [],
       imagens: [
-        { src: "assets/img/produtos/caneta-1.jpg", alt: "Quatro canetas em tons de marrom e bege seguradas na mão" },
-        { src: "assets/img/produtos/caneta-2.jpg", alt: "Canetas marrons e bege com detalhe de xícara" },
-        { src: "assets/img/produtos/caneta-3.jpg", alt: "Canetas em tons de marrom abertas na palma da mão" }
+        { src: "assets/img/produtos/caneta-1.webp", alt: "Quatro canetas em tons de marrom e bege seguradas na mão" },
+        { src: "assets/img/produtos/caneta-2.webp", alt: "Canetas marrons e bege com detalhe de xícara" },
+        { src: "assets/img/produtos/caneta-3.webp", alt: "Canetas em tons de marrom abertas na palma da mão" }
       ],
       destaque: false, ordem: 12
     },

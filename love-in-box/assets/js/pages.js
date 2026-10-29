@@ -19,7 +19,8 @@
     if (cats) cats.innerHTML = L.CAT.categorias.map(function (c) {
       var items = all.filter(function (p) { return p.categoria === c.id; });
       if (!items.length) return "";
-      var withImg = items.filter(function (p) { return p.imagens && p.imagens.length; })[0];
+      var capa = c.capa && L.product(c.capa);
+      var withImg = (capa && capa.imagens && capa.imagens.length) ? capa : items.filter(function (p) { return p.imagens && p.imagens.length; })[0];
       var art = withImg
         ? '<img class="photo" src="' + esc(withImg.imagens[0].src) + '" alt="" loading="lazy" width="1080" height="1350">'
         : '<img class="icon" src="assets/img/icons/' + esc(c.icone) + '.png" alt="" loading="lazy" width="256" height="256">';
@@ -50,6 +51,13 @@
     L.$$("[data-price]").forEach(function (el) {
       var p = L.product(el.getAttribute("data-price"));
       if (p) el.innerHTML = L.priceHTML(p) + ' <span class="small muted">· ' + esc(L.statusOf(p).rotulo.toLowerCase()) + "</span>";
+    });
+    L.$$("[data-price-from]").forEach(function (el) {
+      var cid = el.getAttribute("data-price-from");
+      var ps = L.products().filter(function (p) { return p.categoria === cid && p.preco != null && p.status !== "em-estudo"; });
+      if (!ps.length) return;
+      var min = Math.min.apply(null, ps.map(function (p) { return p.preco; }));
+      el.innerHTML = '<span class="price"><small>a partir de </small>' + L.money(min) + '</span> <span class="small muted">· ' + ps.length + " opções</span>";
     });
     L.$$("[data-tag]").forEach(function (el) {
       var p = L.product(el.getAttribute("data-tag"));

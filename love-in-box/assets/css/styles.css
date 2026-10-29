@@ -940,3 +940,41 @@ main > .row-wrap{ margin-top: var(--sec); }
   .box-feature{ min-height: 0; }
   .box-feature .feature-media{ aspect-ratio: auto; min-height: 440px; }
 }
+
+/* ---------- 17. botão fixo de WhatsApp ---------- */
+.wa-fab{
+  position: fixed; z-index: 44;
+  right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 52px; padding: 0 18px 0 15px; border-radius: 999px;
+  background: #1E7A46; color: #fff; text-decoration: none;
+  font-weight: 800; font-size: .9375rem;
+  box-shadow: 0 10px 24px -12px rgba(30,17,11,.55);
+  transition: transform .25s var(--ease), background-color .25s var(--ease);
+}
+.wa-fab svg{ width: 22px; height: 22px; flex: none; }
+.wa-fab:hover{ background: #186539; transform: translateY(-2px); }
+.wa-fab:focus-visible{ outline-color: var(--ink); }
+body.has-buybar .wa-fab{ bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+@media (max-width: 599px){
+  .wa-fab{ width: 52px; padding: 0; justify-content: center; }
+  .wa-fab span{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce){ .wa-fab{ transition: none; } .wa-fab:hover{ transform: none; } }
+.site-footer{ margin-bottom: calc(var(--gap) + 76px + env(safe-area-inset-bottom, 0px)); }
+
+/* topo com foto do kit */
+.hero-media > img{ object-position: 50% 45%; }
+.box-feature .feature-media > img{ object-position: 50% 58%; }
+@media (max-width: 899px){
+  /* celular: foto do kit em cima, texto em bloco creme logo abaixo (legível sobre qualquer foto) */
+  .hero > *{ grid-area: auto; }
+  .hero-media{ grid-row: 1; aspect-ratio: 1 / 1; min-height: 0; max-height: 62svh; }
+  .hero-media::after{ display: none; }
+  .hero-side{ grid-row: 2; align-self: stretch; background: var(--cream); color: var(--ink); border-radius: var(--r); }
+  .hero-side .label{ color: var(--ink-2); opacity: 1; }
+  .hero-sub{ color: var(--ink-2); opacity: 1; }
+  .hero-btn1{ background: var(--ink); color: var(--bg); }
+  .hero-btn2{ border-color: var(--ink); color: var(--ink); background: transparent; }
+  .hero-tag{ display: inline-flex !important; top: auto; bottom: 12px; left: 12px; }
+}

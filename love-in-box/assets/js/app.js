@@ -258,7 +258,7 @@
         '<div><h3 class="label">Categorias</h3><ul>' + cats + "</ul></div>" +
         '<div><h3 class="label">Ocasiões e temas</h3><ul>' + cols + "</ul></div>" +
         '<div><h3 class="label">Por orçamento</h3><ul>' + budget + '<li><a href="loja.html">Todos os presentes</a></li></ul></div>' +
-        '<a class="mega-feature" href="personalizados.html"><img src="assets/img/marca/cafe-servido.jpg" alt="" loading="lazy"><span>Personalize com a sua foto</span></a>' +
+        '<a class="mega-feature" href="personalizados.html"><img src="assets/img/marca/cafe-servido.webp" alt="" loading="lazy"><span>Personalize com a sua foto</span></a>' +
       "</div></div>" +
       "</header>";
   }
@@ -486,6 +486,13 @@
     var h = $("#lib-header"); if (h) h.outerHTML = headerHTML(page);
     var f = $("#lib-footer"); if (f) f.outerHTML = footerHTML();
     document.body.insertAdjacentHTML("beforeend", drawersHTML());
+    var waFab = waLink("Olá! Vim pelo site da Love in Box e quero ajuda para escolher um presente.");
+    if (waFab && page !== "pedido") {
+      document.body.insertAdjacentHTML("beforeend",
+        '<aside aria-label="Atendimento"><a class="wa-fab" href="' + esc(waFab) + '" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp (abre em nova aba)">' +
+        icon("chat") +
+        "<span>WhatsApp</span></a></aside>");
+    }
     $$("dialog").forEach(wireDialog);
 
     $("#menu-open").addEventListener("click", function () { openDialog($("#menu-drawer")); });
