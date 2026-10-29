@@ -29,6 +29,39 @@
         '<div class="meta"><p>' + esc(c.resumo) + '</p><span class="label">' + items.length + (items.length === 1 ? " item" : " itens") + "</span></div></a>";
     }).join("");
 
+    /* topo: a caixa abre uma vez na carga; a rolagem só afasta as fotos */
+    L.$$("[data-hero-card]").forEach(function (el) {
+      var p = L.product(el.getAttribute("data-hero-card")); if (!p) return;
+      var cap = el.querySelector(".ub-cap");
+      if (cap) cap.innerHTML = "<b>" + esc(p.nome) + "</b><span>" + esc(L.priceText(p)) + "</span>";
+      el.setAttribute("aria-label", p.nome + ", " + L.priceText(p));
+    });
+    var ub = $("[data-unbox]");
+    if (ub) {
+      var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (still) ub.classList.add("is-open", "is-static");
+      else {
+        var opened = false;
+        var open = function () {
+          if (opened) return; opened = true;
+          ub.classList.add("is-anim");
+          requestAnimationFrame(function () { requestAnimationFrame(function () { ub.classList.add("is-open"); }); });
+          setTimeout(function () { ub.classList.remove("is-anim"); }, 1800);
+        };
+        var imgs = [].slice.call(ub.querySelectorAll("img"));
+        Promise.all(imgs.map(function (im) { return im.decode ? im.decode().catch(function () {}) : null; })).then(function () { setTimeout(open, 250); });
+        setTimeout(open, 1600);
+        var hero = ub.closest(".hero2"), tick = false;
+        var onScroll = function () {
+          tick = false;
+          var r = hero.getBoundingClientRect(), h = r.height || 1;
+          var p = Math.min(1, Math.max(0, -r.top / h));
+          ub.style.setProperty("--p", p.toFixed(3));
+        };
+        window.addEventListener("scroll", function () { if (!tick) { tick = true; requestAnimationFrame(onScroll); } }, { passive: true });
+      }
+    }
+
     var dest = $("[data-destaques]");
     if (dest) dest.innerHTML = all.filter(function (p) { return p.destaque; }).slice(0, 4).map(L.card).join("");
 
