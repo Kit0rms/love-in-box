@@ -150,7 +150,9 @@ window.LIB_CATALOGO = {
       resumo: "Presente montado sob encomenda na caixa Love in Box. Os itens e a personalização são combinados no atendimento.",
       personalizacao: ["Itens da box", "Foto", "Nome", "Mensagem"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/box-personalizada-1.jpg", alt: "Box de papel kraft aberta com caneca Com amor para você, café, bombons e itens de presente" }
+        { src: "assets/img/produtos/box-personalizada-1.jpg", alt: "Box de papel kraft aberta com caneca Com amor para você, café, bombons e itens de presente" },
+        { src: "assets/img/produtos/box-personalizada-2.jpg", alt: "Sacola Love in Box com papel de seda, laço dourado e cartão Parabéns, ao lado de caneca Irmãs do Coração com bombons e balão de coração dourado" },
+        { src: "assets/img/produtos/box-personalizada-3.jpg", alt: "Sacola Love in Box com papel de seda e caneca com a frase Que seu novo ciclo seja cheio de possibilidades, laço dourado e balão de coração dourado" }
       ],
       destaque: true, ordem: 6
     },
