@@ -64,7 +64,7 @@ window.LIB_CATALOGO = {
       produtos: ["kit-memorias", "kit-fotos-imantadas", "caneca-branca", "box-personalizada"] },
     { id: "aniversario", nome: "Aniversário", tipo: "ocasiao", icone: "bow",
       resumo: "Presentes personalizados com cara de festa.",
-      produtos: ["kit-momento-cafe", "kit-memorias", "box-personalizada", "caneca-branca"] }
+      produtos: ["kit-irmas-do-coracao", "kit-novo-ciclo", "kit-momento-cafe", "kit-memorias"] }
   ],
 
   /* ---------------- PRODUTOS ---------------- */
@@ -150,9 +150,7 @@ window.LIB_CATALOGO = {
       resumo: "Presente montado sob encomenda na caixa Love in Box. Os itens e a personalização são combinados no atendimento.",
       personalizacao: ["Itens da box", "Foto", "Nome", "Mensagem"], personalizacaoProvisoria: true,
       imagens: [
-        { src: "assets/img/produtos/box-personalizada-1.jpg", alt: "Box de papel kraft aberta com caneca Com amor para você, café, bombons e itens de presente" },
-        { src: "assets/img/produtos/box-personalizada-2.jpg", alt: "Sacola Love in Box com papel de seda, laço dourado e cartão Parabéns, ao lado de caneca Irmãs do Coração com bombons e balão de coração dourado" },
-        { src: "assets/img/produtos/box-personalizada-3.jpg", alt: "Sacola Love in Box com papel de seda e caneca com a frase Que seu novo ciclo seja cheio de possibilidades, laço dourado e balão de coração dourado" }
+        { src: "assets/img/produtos/box-personalizada-1.jpg", alt: "Box de papel kraft aberta com caneca Com amor para você, café, bombons e itens de presente" }
       ],
       destaque: true, ordem: 6
     },
@@ -181,6 +179,32 @@ window.LIB_CATALOGO = {
         { src: "assets/img/produtos/kit-memorias-1.jpg", alt: "Kit Memórias na box Love in Box com café drip, bombons, fotos instantâneas, colher dourada e caneca com versículo" }
       ],
       destaque: false, ordem: 6.6
+    },
+    {
+      id: "kit-irmas-do-coracao",
+      nome: "Kit Irmãs do Coração",
+      categoria: "boxes-e-kits", subcategoria: null,
+      status: "em-venda",
+      preco: 69.90, precoTipo: "fixo", precoProvisorio: true,
+      resumo: "Caneca personalizada de 325 ml com interior e alça amarelos + Ferrero Rocher com 3 unidades ou chocolate conforme disponibilidade + balão metalizado de coração + tag de parabéns + sacola decorada com papel de seda e laço de cetim dourado, pronta para presentear.",
+      personalizacao: ["Arte ou frase da caneca", "Mensagem da tag"], personalizacaoProvisoria: true,
+      imagens: [
+        { src: "assets/img/produtos/kit-irmas-do-coracao-1.jpg", alt: "Kit Irmãs do Coração: sacola Love in Box com papel de seda, laço dourado e tag de parabéns, caneca com interior e alça amarelos, Ferrero Rocher e balão de coração dourado" }
+      ],
+      destaque: false, ordem: 6.7
+    },
+    {
+      id: "kit-novo-ciclo",
+      nome: "Kit Novo Ciclo",
+      categoria: "boxes-e-kits", subcategoria: null,
+      status: "em-venda",
+      preco: 49.90, precoTipo: "fixo", precoProvisorio: true,
+      resumo: "Caneca branca personalizada de 325 ml com frase de felicitação + balão metalizado de coração dourado + laço de cetim dourado feito à mão + sacola decorada com papel de seda, pronta para presentear.",
+      personalizacao: ["Frase da caneca"], personalizacaoProvisoria: true,
+      imagens: [
+        { src: "assets/img/produtos/kit-novo-ciclo-1.jpg", alt: "Kit Novo Ciclo: sacola Love in Box com papel de seda, caneca branca com frase de felicitação, laço dourado e balão de coração dourado" }
+      ],
+      destaque: false, ordem: 6.8
     },
     {
       id: "cafeteira-francesa",
