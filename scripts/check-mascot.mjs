@@ -9,7 +9,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const SPOTS = ["caixa", "palco", "mini", "espiar-baixo", "espiar-lado", "sentada", "none"];
+const SPOTS = ["caixa", "palco", "mini", "espiar-baixo", "espiar-lado", "sentada", "rosto", "none"]; // rosto = só o rosto, em avatar (loja)
 const pages = (await readdir(root)).filter((f) => f.endsWith(".html"));
 const errors = [];
 let total = 0;

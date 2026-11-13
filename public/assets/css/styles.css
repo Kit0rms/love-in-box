@@ -947,13 +947,13 @@ main > .row-wrap{ margin-top: var(--sec); }
   right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   display: inline-flex; align-items: center; gap: 8px;
   min-height: 52px; padding: 0 18px 0 15px; border-radius: 999px;
-  background: #1E7A46; color: #fff; text-decoration: none;
+  background: #F0B225; color: #3A2318; text-decoration: none;
   font-weight: 800; font-size: .9375rem;
   box-shadow: 0 10px 24px -12px rgba(30,17,11,.55);
   transition: transform .25s var(--ease), background-color .25s var(--ease);
 }
 .wa-fab svg{ width: 22px; height: 22px; flex: none; }
-.wa-fab:hover{ background: #186539; transform: translateY(-2px); }
+.wa-fab:hover{ background: #FAC233; transform: translateY(-2px); }
 .wa-fab:focus-visible{ outline-color: var(--ink); }
 body.has-buybar .wa-fab{ bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
 @media (max-width: 599px){

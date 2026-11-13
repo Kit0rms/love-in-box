@@ -89,6 +89,6 @@ function libHtml() {
 export default defineConfig({
   plugins: [libHtml()],
   // O arquivo do 3D (three.js) passa de 500 kB sem compressão, mas só é baixado sob demanda.
-  build: { target: "es2020", assetsInlineLimit: 0, chunkSizeWarningLimit: 700 },
+  build: { target: "es2020", assetsInlineLimit: 0, chunkSizeWarningLimit: 700, rollupOptions: { input: { index: "index.html", loja: "loja.html" } } },
   server: { port: 5173, strictPort: false },
 });

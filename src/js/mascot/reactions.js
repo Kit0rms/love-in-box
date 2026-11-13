@@ -37,6 +37,28 @@ export const CLICK_CYCLE = [
 // Onde ela aparece só de busto (espiando de lado), o clique alterna expressões.
 export const CLICK_FACES = ["surpresa", "divertida", "apaixonada", "animada"];
 
+/* ---------- loja: só o rosto dela, em avatar, acima das categorias ----------
+   Aqui valem apenas as expressões (busto). pose: expressão; fx: elementos soltos;
+   message: fala que fica no balão até a próxima (sem fala = o balão não muda);
+   ms: quanto tempo fica na expressão antes de voltar ao sorriso;
+   cooldown: tempo mínimo (ms) para repetir. Na loja a fala acompanha a ação:
+   aparece toda vez, não só uma vez por visita. */
+export const LOJA = {
+  REST: "sorriso",
+  ENTRADA: { pose: "sorriso", ms: 2600, fx: null, message: "Escolha uma categoria ou busque pelo nome." },
+  "CAT:": { pose: "sorriso", ms: 1600, fx: "brilhos", message: "Escolha uma categoria ou busque pelo nome." },
+  "CAT:canecas": { pose: "pensativa", ms: 2600, fx: "duvida", message: "Hmmm, qual será a caneca selecionada, hein?" },
+  "CAT:fotos-e-lembrancas": { pose: "animada", ms: 2600, fx: "brilhos", message: "Aaah, que legal! Escolha suas fotos favoritas" },
+  "CAT:boxes-e-kits": { pose: "apaixonada", ms: 2600, fx: "coracoes", message: "Você vai se apaixonar pelos nossos Box & Kits" },
+  "CAT:complementos": { pose: "confiante", ms: 2400, fx: null, message: "Conheça nossos complementos" },
+  BUSCA: { pose: "curiosa", ms: 2400, fx: "duvida", message: "O que você procura?" },
+  FILTRO: { pose: "pensativa", ms: 2000, fx: null, message: null },
+  LIMPAR: { pose: "sorriso", ms: 1400, fx: null, message: "Escolha uma categoria ou busque pelo nome." },
+  VAZIO: { pose: "surpresa", ms: 3200, fx: null, message: "Ops! Não achei nada assim." },
+  PRODUTO: { pose: "curiosa", ms: 1500, fx: null, message: null, cooldown: 2500 },
+  ADICIONOU: { pose: "apaixonada", ms: 2600, fx: "coracoes", message: "Amei sua escolha!" },
+};
+
 /* ---------- reações a ações na página ----------
    pose:     imagem mostrada enquanto reage (gesto ou expressão)
    ms:       quanto tempo fica nela antes de voltar

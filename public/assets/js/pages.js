@@ -161,10 +161,10 @@
     }
 
     function chipsHTML() {
-      var html = '<button class="chip" type="button" data-cat="" aria-pressed="' + (!state.categoria) + '">Todos</button>';
+      var html = '<button class="chip" type="button" data-cat="" aria-pressed="' + (!state.categoria) + '"><img src="assets/img/icons/sparkle.png" alt="" width="24" height="24">Todos<span class="chip-n">' + all.length + '</span></button>';
       L.CAT.categorias.forEach(function (c) {
         var n = all.filter(function (p) { return p.categoria === c.id; }).length; if (!n) return;
-        html += '<button class="chip" type="button" data-cat="' + esc(c.id) + '" aria-pressed="' + (state.categoria === c.id) + '">' + esc(c.nome) + "</button>";
+        html += '<button class="chip" type="button" data-cat="' + esc(c.id) + '" aria-pressed="' + (state.categoria === c.id) + '"><img src="assets/img/icons/' + esc(c.icone || "sparkle") + '.png" alt="" width="24" height="24">' + esc(c.nome) + '<span class="chip-n">' + n + "</span></button>";
       });
       return html;
     }
@@ -180,6 +180,7 @@
       return out.join("");
     }
 
+    var lastKey = "init";
     function render() {
       var list = filtered();
       var cat = L.category(state.categoria), col = L.collection(state.colecao), sub = L.subcategory(state.categoria, state.sub);
@@ -198,12 +199,13 @@
       fillSelects();
       if (window.LIB && L.reveal) L.reveal($("#shop-grid"));
       document.dispatchEvent(new CustomEvent("lib:selecao"));
+      document.dispatchEvent(new CustomEvent("lib:loja", { detail: { key: lastKey, value: state[lastKey] || "", count: list.length, total: all.length } }));
     }
 
     function set(k, v) {
       if (v) state[k] = v; else delete state[k];
       if (k === "categoria") delete state.sub;
-      writeState(); render();
+      lastKey = k; writeState(); render();
     }
 
     $("#cat-chips").addEventListener("click", function (e) {
@@ -222,11 +224,11 @@
       t = setTimeout(function () { set("q", v); }, 180);
     });
     $("#q").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); this.blur(); } });
-    function clearAll() { state = {}; writeState(); render(); }
+    function clearAll() { state = {}; lastKey = "limpar"; writeState(); render(); }
     $("#clear-all").addEventListener("click", clearAll);
-    $("#filters-clear").addEventListener("click", function () { var c = state.categoria, q = state.q; state = {}; if (c) state.categoria = c; if (q) state.q = q; writeState(); render(); });
+    $("#filters-clear").addEventListener("click", function () { var c = state.categoria, q = state.q; state = {}; if (c) state.categoria = c; if (q) state.q = q; lastKey = "limpar"; writeState(); render(); });
     $("#filters-open").addEventListener("click", function () { L.openDialog($("#filters-sheet")); });
-    window.addEventListener("hashchange", function () { readState(); render(); });
+    window.addEventListener("hashchange", function () { readState(); lastKey = "nav"; render(); });
 
     var p0 = readState();
     render();

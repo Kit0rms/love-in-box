@@ -1,0 +1,164 @@
+/* Love in Box · loja
+   Camada por cima do CSS do v1 (public/assets/css/styles.css), só para esta página.
+   Usa os tokens de lá (--ink, --cream, --sand, --gold, --ease…). Nada de cor nova. */
+
+[data-page="loja"] { --shop-gold: var(--gold, #F0B225); --shop-sun: var(--sun, #FAC233); }
+
+/* ---------- cabeçalho da loja: título + busca e filtros ---------- */
+main[data-page="loja"] .shop-head .page-hero { padding-bottom: 4px; }
+main[data-page="loja"] .shop-head .shop-bar { padding-top: 12px; }
+main[data-page="loja"] .search input { transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease; }
+main[data-page="loja"] .search input:focus { background: #fff; }
+
+/* ---------- barra de categorias: acompanha a página, com a mascote ---------- */
+.shop-sentinel { height: 1px; margin-bottom: -1px; }
+.shop-sticky {
+  position: sticky; top: var(--shop-top, 0px); z-index: 40;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px;
+  margin: 12px 0 4px; padding: 10px 12px; border-radius: 28px;
+  background: var(--bg); border: 1px solid transparent;
+  transition: top .45s var(--ease), transform .45s var(--ease), opacity .3s ease, visibility 0s, box-shadow .3s ease, border-color .3s ease;
+}
+/* Rolando para baixo ela sai junto com o cabeçalho (o v1 marca o <body> com .hdr-away);
+   rolando para cima os dois voltam. No lugar original dela (antes de grudar) nunca some. */
+body.hdr-away .shop-sticky.is-stuck {
+  transform: translateY(calc(-100% - 24px)); opacity: 0; visibility: hidden; pointer-events: none;
+  transition: top .45s var(--ease), transform .45s var(--ease), opacity .3s ease, visibility 0s linear .45s;
+}
+.shop-sticky.is-stuck { border-color: var(--line); box-shadow: 0 14px 30px -18px rgba(58, 35, 24, .45); }
+.shop-sticky .chips--scroll {
+  min-width: 0; margin: 0; padding: 4px 2px; gap: 8px; scroll-snap-type: x proximity;
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+}
+.shop-sticky .chip {
+  flex: none; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px 0 10px; scroll-snap-align: start;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s var(--ease);
+}
+.shop-sticky .chip img { width: 24px; height: 24px; object-fit: contain; transition: transform .3s var(--ease); }
+.shop-sticky .chip:hover { transform: translateY(-2px); }
+.shop-sticky .chip:hover img { transform: scale(1.15) rotate(-6deg); }
+.shop-sticky .chip:active { transform: scale(.96); }
+/* categoria escolhida: o dourado do botão principal do site */
+.shop-sticky .chip[aria-pressed="true"] { background: var(--shop-gold); border-color: var(--shop-gold); color: #fff; }
+.chip-n { min-width: 22px; padding: 2px 6px; border-radius: 999px; background: rgba(58, 35, 24, .08); font-size: .6875rem; font-weight: 800; line-height: 1.3; text-align: center; }
+.chip[aria-pressed="true"] .chip-n { background: #fff; color: var(--ink); }
+
+/* ---------- linha de resultado ---------- */
+main[data-page="loja"] > .result-line { padding: 4px 16px 12px; min-height: 44px; }
+#result-count { display: inline-block; font-weight: 700; color: var(--ink); }
+#result-count.is-bump { animation: shop-bump .45s var(--ease); }
+main[data-page="loja"] .active-filters button { transition: background-color .2s ease, transform .2s var(--ease); animation: shop-pill .3s var(--ease) both; }
+main[data-page="loja"] .active-filters button:hover { background: var(--shop-gold); transform: translateY(-1px); }
+
+/* ---------- cartões: entram em cascata e respondem ao mouse ---------- */
+#shop-grid.is-fresh > .pcard { animation: shop-card .5s var(--ease) both; }
+#shop-grid.is-fresh > .pcard:nth-child(2) { animation-delay: .04s; }
+#shop-grid.is-fresh > .pcard:nth-child(3) { animation-delay: .08s; }
+#shop-grid.is-fresh > .pcard:nth-child(4) { animation-delay: .12s; }
+#shop-grid.is-fresh > .pcard:nth-child(5) { animation-delay: .16s; }
+#shop-grid.is-fresh > .pcard:nth-child(6) { animation-delay: .2s; }
+#shop-grid.is-fresh > .pcard:nth-child(7) { animation-delay: .24s; }
+#shop-grid.is-fresh > .pcard:nth-child(n+8) { animation-delay: .28s; }
+#shop-grid > .pcard { transition: box-shadow .3s ease, translate .3s var(--ease), opacity .8s var(--ease), transform .9s var(--ease); }
+@media (hover: hover) {
+  #shop-grid > .pcard:hover { translate: 0 -4px; box-shadow: 0 18px 40px -18px rgba(58, 35, 24, .35); }
+  #shop-grid > .pcard:hover .ph-img { transform: scale(1.04); }
+}
+/* "+" da sacola: dourado ao passar o mouse e um pulinho ao adicionar */
+#shop-grid .pcard .add:hover { background: var(--shop-gold); border-color: var(--shop-gold); color: var(--ink); transform: scale(1.08); }
+#shop-grid .pcard .add.is-pop { animation: shop-add .45s var(--ease); }
+
+@keyframes shop-card { from { opacity: 0; translate: 0 22px; scale: .97; } }
+@keyframes shop-bump { 40% { scale: 1.12; color: var(--rose, #B4434F); } }
+@keyframes shop-pill { from { opacity: 0; scale: .85; } }
+@keyframes shop-add { 35% { scale: 1.3; } 70% { scale: .92; } }
+
+/* ---------- mascote: só o rosto, em avatar, com o balão ao lado ----------
+   Rosto e balão ocupam uma linha própria da barra (acima das categorias): a fala
+   tem lugar reservado, nunca fica por cima de outro elemento e não empurra a página. */
+.shop-sticky .mascot-slot { min-width: 0; }
+.face { position: relative; display: flex; align-items: center; gap: 14px; min-height: 56px; }
+.face-hit {
+  position: relative; flex: none; display: block; width: 52px; height: 52px; padding: 0; border: 2px solid var(--shop-gold); border-radius: 50%; overflow: hidden;
+  background: var(--sand, #E8CFAD); cursor: pointer; -webkit-tap-highlight-color: transparent; transition: transform .2s var(--ease), box-shadow .2s ease;
+}
+.face-hit:hover { transform: scale(1.06) rotate(-3deg); box-shadow: 0 8px 18px -8px rgba(58, 35, 24, .5); }
+.face-hit:active { transform: scale(.95); }
+.face-pic { position: absolute; inset: 0; display: block; transform-origin: 50% 100%; animation: face-breath 3.2s ease-in-out infinite alternate; }
+.face-pic.is-pop { animation: face-pop .5s var(--ease); }
+/* o busto é maior que o círculo: o rosto preenche o avatar e os ombros somem na borda de baixo */
+.face-pic img { position: absolute; left: 50%; bottom: -14%; width: 124%; max-width: none; height: auto; translate: -50% 0; opacity: 0; user-select: none; -webkit-user-drag: none; }
+.face-pic img.is-on { opacity: 1; }
+
+/* balão: sempre visível, texto claro sobre a tinta da marca (contraste alto), rabicho para o rosto */
+.face-say {
+  position: relative; min-width: 0; margin: 0; padding: 10px 16px; border-radius: 18px;
+  background: var(--ink); color: #fff; font-weight: 700; font-size: .9375rem; line-height: 1.35; text-wrap: balance;
+}
+.face-say:empty { display: none; }
+.face-say::before { content: ""; position: absolute; left: -5px; top: 50%; width: 12px; height: 12px; margin-top: -6px; border-radius: 2px; background: inherit; rotate: 45deg; }
+.face-say.is-new { animation: face-say .4s var(--ease); transform-origin: 0 50%; }
+
+/* elementos soltos (ícones oficiais) saindo de cima dela */
+.face-fx { position: absolute; left: 26px; top: 2px; width: 0; height: 0; pointer-events: none; z-index: 2; }
+.face-particle { position: absolute; left: 0; top: 0; width: 18px; height: 18px; max-width: none; object-fit: contain; animation: face-float 1.1s var(--ease) both; }
+.face-q { width: auto; height: auto; font-family: var(--font-display, "Baloo 2", sans-serif); font-weight: 800; font-size: 26px; line-height: 1; color: var(--shop-gold); text-shadow: 0 2px 0 var(--ink); }
+
+@keyframes face-say { from { opacity: 0; scale: .9; translate: -8px 0; } }
+@keyframes face-breath { to { transform: scale(1.03); } }
+@keyframes face-pop { 0% { transform: scale(1); } 18% { transform: scale(1.1, .86); } 45% { transform: scale(.94, 1.1); } 100% { transform: scale(1); } }
+@keyframes face-float { 0% { opacity: 0; transform: translate(calc(-50% + var(--x) * .4), 0) scale(.3); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(calc(-50% + var(--x)), -46px) scale(1); } }
+
+@media (min-width: 900px) {
+  .shop-sticky { padding: 12px 16px; }
+  .face { gap: 16px; min-height: 64px; }
+  .face-hit { width: 64px; height: 64px; }
+  .face-fx { left: 32px; }
+  .face-say { font-size: 1rem; }
+  .shop-sticky .chip { padding: 0 18px 0 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shop-sticky, .shop-sticky *, #shop-grid > .pcard, #result-count, .face, .face * { animation: none !important; transition: none !important; }
+}
+@media print { .shop-sticky .mascot-slot { display: none; } }
+
+/* ---------- cabeçalho igual ao da home ----------
+   O cabeçalho continua sendo montado pelo app.js do v1 (menu lateral, sacola, sumir ao rolar);
+   loja.js reorganiza os itens e marca o <body> com .hdr-home. Aqui ele ganha a mesma
+   composição da home: faixa de aviso reta, marca à esquerda, navegação à direita. */
+body.hdr-home .announce {
+  max-width: none; min-height: 0; margin: 0 calc(var(--gutter-r, 0px) * -1) 0 calc(var(--gutter, 0px) * -1);
+  padding: 7px 16px; border-radius: 0; background: var(--cream);
+}
+body.hdr-home .announce p { color: var(--ink-2); font-size: .8125rem; font-weight: 600; letter-spacing: 0; text-transform: none; line-height: 1.55; }
+body.hdr-home .site-header { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; border-bottom: 1px solid transparent; box-shadow: none; }
+body.hdr-home .site-header.is-scrolled { border-bottom-color: var(--line); box-shadow: none; }
+body.hdr-home .hdr { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: auto; padding: 12px 4px; }
+body.hdr-home .hdr-left { display: none; }
+body.hdr-home .brand { flex: none; border-radius: 12px; transition: transform .18s ease; }
+body.hdr-home .brand:hover { transform: scale(1.04); }
+body.hdr-home .brand img { width: 56px; height: 56px; }
+body.hdr-home .hdr-right { gap: 8px; }
+body.hdr-home .nav-desk { display: none; align-items: center; gap: 4px; }
+body.hdr-home .nav-link {
+  min-height: 44px; padding: 0 16px; font-size: .9375rem; font-weight: 700; letter-spacing: 0; text-transform: none; line-height: 1.2;
+  transition: background-color .18s ease, color .18s ease;
+}
+body.hdr-home .nav-link:hover { background: var(--cream); color: var(--rose, #B4434F); }
+body.hdr-home .nav-link[aria-current="page"] { background: var(--cream); }
+body.hdr-home .hdr .menu-btn {
+  display: inline-flex; align-items: center; gap: 8px; width: auto; height: auto; min-height: 44px; padding: 0 16px;
+  border: 1.5px solid var(--ink); border-radius: 999px; background: none; color: var(--ink);
+  font: 800 .8125rem/1 var(--f-body, inherit); letter-spacing: .04em; text-transform: uppercase;
+  transition: background-color .18s ease, color .18s ease;
+}
+body.hdr-home .hdr .menu-btn:hover { background: var(--ink); color: var(--bg); }
+body.hdr-home .hdr .menu-btn svg { width: 20px; height: 20px; }
+@media (min-width: 860px) {
+  body.hdr-home .hdr { gap: 32px; }
+  body.hdr-home .brand img { width: 64px; height: 64px; }
+  body.hdr-home .nav-desk { display: flex; }
+  body.hdr-home .hdr .menu-btn { display: none; }
+}
+@media (min-width: 1100px) { body.hdr-home .nav-desk { gap: 8px; } }
