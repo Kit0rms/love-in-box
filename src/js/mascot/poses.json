@@ -1,0 +1,122 @@
+{
+  "sets": {
+    "vistas": {
+      "w": 154,
+      "h": 351,
+      "head": 114
+    },
+    "expressoes": {
+      "w": 184,
+      "h": 166,
+      "head": 146
+    },
+    "gestos": {
+      "w": 218,
+      "h": 268,
+      "head": 134
+    },
+    "sentada": {
+      "w": 210,
+      "h": 245,
+      "head": 126
+    }
+  },
+  "poses": {
+    "frente": {
+      "set": "vistas",
+      "file": "frente.webp"
+    },
+    "tres-quartos-frente": {
+      "set": "vistas",
+      "file": "tres-quartos-frente.webp"
+    },
+    "lado-direito": {
+      "set": "vistas",
+      "file": "lado-direito.webp"
+    },
+    "tres-quartos-tras": {
+      "set": "vistas",
+      "file": "tres-quartos-tras.webp"
+    },
+    "tras": {
+      "set": "vistas",
+      "file": "tras.webp"
+    },
+    "lado-esquerdo": {
+      "set": "vistas",
+      "file": "lado-esquerdo.webp"
+    },
+    "sorriso": {
+      "set": "expressoes",
+      "file": "sorriso.webp"
+    },
+    "seria": {
+      "set": "expressoes",
+      "file": "seria.webp"
+    },
+    "pensativa": {
+      "set": "expressoes",
+      "file": "pensativa.webp"
+    },
+    "surpresa": {
+      "set": "expressoes",
+      "file": "surpresa.webp"
+    },
+    "animada": {
+      "set": "expressoes",
+      "file": "animada.webp"
+    },
+    "confiante": {
+      "set": "expressoes",
+      "file": "confiante.webp"
+    },
+    "curiosa": {
+      "set": "expressoes",
+      "file": "curiosa.webp"
+    },
+    "apaixonada": {
+      "set": "expressoes",
+      "file": "apaixonada.webp"
+    },
+    "divertida": {
+      "set": "expressoes",
+      "file": "divertida.webp"
+    },
+    "acenando": {
+      "set": "gestos",
+      "file": "acenando.webp"
+    },
+    "vitoria": {
+      "set": "gestos",
+      "file": "vitoria.webp"
+    },
+    "com-caneca": {
+      "set": "gestos",
+      "file": "com-caneca.webp"
+    },
+    "ouvindo-musica": {
+      "set": "gestos",
+      "file": "ouvindo-musica.webp"
+    },
+    "com-livros": {
+      "set": "gestos",
+      "file": "com-livros.webp"
+    },
+    "joinha": {
+      "set": "gestos",
+      "file": "joinha.webp"
+    },
+    "coracao": {
+      "set": "gestos",
+      "file": "coracao.webp"
+    },
+    "selfie": {
+      "set": "gestos",
+      "file": "selfie.webp"
+    },
+    "trabalhando": {
+      "set": "sentada",
+      "file": "trabalhando.webp"
+    }
+  }
+}

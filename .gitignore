@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.vercel
+.omc/
+*.log
+
+# material interno de trabalho (caminhos locais, instruções de agentes, fichas da mascote): fora do repositório público
+.claude/
+CLAUDE.md
+AGENTS.md
+docs/mascote-brief.md
+docs/mascote/
+scripts/build-assets.mjs
+scripts/build-mascot.mjs

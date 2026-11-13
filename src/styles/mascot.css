@@ -1,0 +1,62 @@
+/* Mascote Love in Box · só tokens de main.css; tamanhos vêm de motion-tokens.js.
+   .mascot-slot = o ponto do layout onde ficam os pés (ou a cintura) dela.
+   .mascot      = a personagem única, que o JS move de um slot para outro. */
+
+/* O lugar dos slots em cada seção fica em main.css (precisa valer antes de a mascote carregar,
+   para a página não mudar de altura depois). */
+
+/* ----- a personagem ----- */
+.mascot { position: absolute; left: 0; bottom: 0; pointer-events: none; }
+.mascot > * { position: absolute; left: 50%; bottom: 0; }
+.mascot-hit { display: block; padding: 0; border: 0; background: none; cursor: pointer; pointer-events: auto; -webkit-tap-highlight-color: transparent; border-radius: 12px; }
+.mascot-clip, .mascot-lean, .mascot-rig, .mascot-breath { position: absolute; inset: 0; display: block; }
+.mascot.is-clip .mascot-clip { clip-path: inset(-400% -200% 0 -200%); } /* some o que passa da borda de baixo: ela está atrás do bloco */
+.mascot img { position: absolute; left: 50%; bottom: 0; max-width: none; opacity: 0; user-select: none; -webkit-user-drag: none; }
+.mascot img.is-on { opacity: 1; }
+.mascot-rig { will-change: transform; }
+
+.mascot-shadow {
+  display: none; width: 76%; height: 12px; margin-left: -38%; bottom: -5px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(58, 35, 24, .34), rgba(58, 35, 24, 0));
+}
+.mascot.has-shadow .mascot-shadow { display: block; }
+
+/* ----- balão: acima da cabeça, com o rabicho apontando para ela ----- */
+.mascot-say {
+  z-index: 2; margin: 0; width: max-content; max-width: min(220px, 68vw); padding: 9px 14px; border-radius: 16px;
+  background: var(--bg); color: var(--ink); box-shadow: var(--shadow); font: 700 .875rem/1.35 var(--font-text); text-align: center;
+  translate: calc(-50% + var(--shift, 0px)) 6px; opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .3s ease, translate .3s ease, visibility 0s linear .3s;
+}
+.mascot-say::after {
+  content: ""; position: absolute; left: calc(50% - var(--shift, 0px)); bottom: -5px; width: 12px; height: 12px; margin-left: -6px;
+  background: var(--bg); rotate: 45deg; border-radius: 2px;
+}
+.mascot-say.is-on { translate: calc(-50% + var(--shift, 0px)) 0; opacity: 1; visibility: visible; transition-delay: 0s; }
+@media (min-width: 900px) { .mascot-say { font-size: .9375rem; } }
+
+/* ----- elementos soltos ----- */
+.mascot-fx { width: 0; height: 0; pointer-events: none; }
+.mascot-particle { position: absolute; left: 0; bottom: 0; translate: -50% 0; max-width: none; pointer-events: none; }
+.mascot-q { font-family: var(--font-display); font-weight: 800; line-height: 1; color: var(--gold); text-shadow: 0 2px 0 var(--ink); }
+
+/* ----- esconder (discreto: aparece ao passar o mouse, focar ou, no toque, sempre) ----- */
+.mascot-hide {
+  display: grid; place-items: center; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; cursor: pointer; pointer-events: auto;
+  background: var(--bg); color: var(--ink-2); box-shadow: 0 2px 8px -2px rgba(58, 35, 24, .45); opacity: 0; transition: opacity .2s ease;
+}
+.mascot-hide::after { content: ""; position: absolute; inset: -11px; }
+.mascot-hide svg { width: 11px; height: 11px; }
+.mascot:hover .mascot-hide, .mascot:focus-within .mascot-hide { opacity: 1; }
+@media (hover: none) { .mascot-hide { opacity: .92; } }
+
+.footer-toggle { min-height: 44px; padding: 0; border: 0; background: none; color: var(--ink); font: 700 .9375rem/1.2 var(--font-text); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.footer-toggle:hover { color: var(--rose); }
+
+/* Menos movimento: sem pulo, giro ou salto (o JS não anima); as trocas viram fade. */
+@media (prefers-reduced-motion: reduce) {
+  .mascot .mascot-breath img { transition: opacity .3s ease !important; }
+  .mascot .mascot-say { transition: opacity .3s ease, visibility 0s linear .3s !important; }
+  .mascot .mascot-say.is-on { transition-delay: 0s !important; }
+}
+@media print { .mascot-slot { display: none; } }
