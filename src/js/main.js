@@ -45,6 +45,14 @@ if (header) {
   update();
 }
 
+/* ----- WhatsApp flutuante: no celular só aparece depois dos botões do topo -----
+   (no primeiro ecrã ele ficaria por cima de "Ver os presentes"; o CSS só aplica .is-wait em telas pequenas) */
+const waFab = document.querySelector(".wa"), heroBtns = document.querySelector(".hero2 .btn-row");
+if (waFab && heroBtns && "IntersectionObserver" in window) {
+  waFab.classList.add("is-wait");
+  new IntersectionObserver(([en]) => waFab.classList.toggle("is-wait", en.isIntersecting || en.boundingClientRect.top > 0)).observe(heroBtns);
+}
+
 /* ----- hero editorial: a caixa começa fechada e abre no clique -----
    O estado fechado é aplicado por um script em linha no index.html (antes da
    primeira pintura). Aqui só entra o clique. A mascote não participa desta seção. */

@@ -31,14 +31,14 @@
 
   --gap: 12px;
   --pad: 20px;
-  --section: 28px;
+  --section: 40px;   /* distância entre seções (celular primeiro; cresce nas telas maiores) */
   --r-lg: 22px;
   --r-md: 14px;
   --shadow: 0 18px 40px -18px rgba(58, 35, 24, .35);
   --page: 1240px;
   --ease: cubic-bezier(.2, .7, .2, 1);
 }
-@media (min-width: 700px) { :root { --pad: 32px; --section: 36px; } }
+@media (min-width: 700px) { :root { --pad: 32px; --section: 44px; } }
 @media (min-width: 1000px) { :root { --gap: 16px; --pad: 44px; --section: 48px; --r-lg: 28px; --r-md: 18px; } }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -76,7 +76,7 @@ h1, .h2, .h3 { font-family: var(--font-display); font-weight: 800; letter-spacin
   /* Acompanha a página: some ao rolar para baixo e volta ao rolar para cima (main.js). */
   position: sticky; top: 0; z-index: 40;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  max-width: var(--page); margin: 0 auto; padding: 12px 16px;
+  max-width: var(--page); margin: 0 auto; padding: 8px 16px;
   background: var(--bg); border-bottom: 1px solid transparent;
   transition: transform .32s var(--ease), border-color .2s ease;
 }
@@ -247,9 +247,9 @@ main { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--section)
   .ub { order: 0; width: min(88%, 640px); margin: 0 auto; }
 }
 @media (max-width: 899px) {
-  .hero2-copy { padding-top: 0; }
-  .hero2 .btn-row .btn { flex: 1 1 auto; }
-  .ub { margin-top: 9%; }
+  .hero2-copy { gap: 16px; padding-top: 0; }
+  .hero2 .btn-row .btn { flex: 1 1 100%; }
+  .ub { width: min(86%, 440px); margin-top: 7%; }
 }
 @media (prefers-reduced-motion: reduce) { .ub-lid, .ub-tissue { animation: none !important; } .ub .ub-card { transition: none !important; } }
 
@@ -336,7 +336,7 @@ main { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--section)
 /* ---------- na vida real ---------- */
 .rail {
   display: grid; grid-auto-flow: column; grid-auto-columns: min(62%, 250px); gap: var(--gap);
-  overflow-x: auto; scroll-snap-type: x proximity; overscroll-behavior-x: contain; scrollbar-width: thin;
+  overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-inline: 16px; overscroll-behavior-x: contain; scrollbar-width: thin;
   margin-inline: -16px; padding: 4px 16px 16px;
 }
 .rail figure { scroll-snap-align: start; }
@@ -387,6 +387,8 @@ main { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--section)
 .wa:hover { transform: translateY(-2px); background: var(--sun); box-shadow: 0 14px 30px -12px rgba(60, 20, 10, .6); }
 .wa svg { width: 24px; height: 24px; }
 @media (max-width: 699px) {
+  .wa { transition: transform .25s var(--ease), opacity .25s ease, visibility 0s, background-color .18s ease; }
+  .wa.is-wait { opacity: 0; visibility: hidden; transform: translateY(16px); transition: transform .25s var(--ease), opacity .25s ease, visibility 0s linear .25s; }
   /* no celular vira um botão redondo, para não cobrir o conteúdo */
   .wa { width: 56px; height: 56px; padding: 0; justify-content: center; }
   .wa svg { width: 28px; height: 28px; }
@@ -400,16 +402,16 @@ main { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--section)
 
 /* ----- onde fica o slot em cada tipo de seção ----- */
 /* ao lado do título, sobre a borda de cima do conteúdo (cartões, fotos) */
-.block-head--mascot { min-height: 100px; align-items: flex-end; padding-right: 96px; }
+.block-head--mascot { min-height: 76px; align-items: flex-end; padding-right: 96px; }
 .block-head--mascot > .mascot-slot { right: 46px; bottom: -20px; }
 /* espiando por cima da borda de um bloco: o bloco ganha respiro em cima para ela caber */
-.has-peek { position: relative; margin-top: 58px; }
+.has-peek { position: relative; margin-top: 48px; }
 .has-peek > .mascot-slot { right: 15%; bottom: 100%; }
 .has-peek > .mascot-slot--left { right: auto; left: 17%; }
 .faq { position: relative; }
 .faq > .mascot-slot { right: 12%; bottom: 100%; }
-.faq-wrap.has-peek { margin-top: 30px; }
-.footer.has-peek { margin-top: 64px; }
+.faq-wrap.has-peek { margin-top: 24px; }
+.footer.has-peek { margin-top: 56px; }
 /* topo: o JS posiciona o slot da caixa sobre o sprite 3D; o do chão fica ao lado da caixa */
 .mascot-slot--box { left: 0; top: 0; }
 .mascot-slot--floor { left: 15%; bottom: 6%; }

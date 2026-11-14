@@ -21,17 +21,18 @@ main[data-page="loja"] .search input:focus { background: #fff; }
 }
 /* Rolando para baixo ela sai junto com o cabeçalho (o v1 marca o <body> com .hdr-away);
    rolando para cima os dois voltam. No lugar original dela (antes de grudar) nunca some. */
-body.hdr-away .shop-sticky.is-stuck {
+body.hdr-away .shop-sticky.is-stuck:not(.is-peek) {
   transform: translateY(calc(-100% - 24px)); opacity: 0; visibility: hidden; pointer-events: none;
   transition: top .45s var(--ease), transform .45s var(--ease), opacity .3s ease, visibility 0s linear .45s;
 }
 .shop-sticky.is-stuck { border-color: var(--line); box-shadow: 0 14px 30px -18px rgba(58, 35, 24, .45); }
-.shop-sticky .chips--scroll {
-  min-width: 0; margin: 0; padding: 4px 2px; gap: 8px; scroll-snap-type: x proximity;
-  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
-}
+/* Categorias nunca cortam nem rolam para o lado: no celular ficam uma embaixo da outra
+   (nome à esquerda, quantidade à direita); em telas maiores quebram de linha. */
+.shop-sticky .chips--scroll { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; min-width: 0; margin: 0; padding: 0; overflow: visible; }
+/* celular: "Todos" sozinho na primeira linha; as outras quatro em duas colunas */
+.shop-sticky .chips--scroll > .chip:first-child { grid-column: 1 / -1; }
 .shop-sticky .chip {
-  flex: none; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px 0 10px; scroll-snap-align: start;
+  display: flex; align-items: center; gap: 8px; width: 100%; min-width: 0; min-height: 52px; padding: 6px 10px 6px 10px; font-size: .9375rem; line-height: 1.2; text-align: left; white-space: normal;
   transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s var(--ease);
 }
 .shop-sticky .chip img { width: 24px; height: 24px; object-fit: contain; transition: transform .3s var(--ease); }
@@ -40,8 +41,28 @@ body.hdr-away .shop-sticky.is-stuck {
 .shop-sticky .chip:active { transform: scale(.96); }
 /* categoria escolhida: o dourado do botão principal do site */
 .shop-sticky .chip[aria-pressed="true"] { background: var(--shop-gold); border-color: var(--shop-gold); color: #fff; }
-.chip-n { min-width: 22px; padding: 2px 6px; border-radius: 999px; background: rgba(58, 35, 24, .08); font-size: .6875rem; font-weight: 800; line-height: 1.3; text-align: center; }
+.chip-n { margin-left: auto; min-width: 22px; padding: 2px 6px; border-radius: 999px; background: rgba(58, 35, 24, .08); font-size: .6875rem; font-weight: 800; line-height: 1.3; text-align: center; }
 .chip[aria-pressed="true"] .chip-n { background: #fff; color: var(--ink); }
+/* celular: as quatro categorias em duas colunas viram cartõezinhos — ícone e quantidade
+   em cima, nome embaixo —, assim nomes longos ("Complementos") cabem até em 360 px */
+@media (max-width: 699px) {
+  .shop-sticky .chips--scroll > .chip:not(:first-child) {
+    display: grid; grid-template-columns: auto 1fr; grid-template-areas: "icon n" "name name";
+    align-items: center; align-content: start; row-gap: 6px; min-height: 94px; padding: 12px; border-radius: 20px;
+  }
+  .shop-sticky .chips--scroll > .chip:not(:first-child) img { grid-area: icon; }
+  .shop-sticky .chips--scroll > .chip:not(:first-child) .chip-n { grid-area: n; justify-self: end; margin-left: 0; }
+  .shop-sticky .chips--scroll > .chip:not(:first-child) .chip-name { grid-area: name; overflow-wrap: anywhere; }
+}
+
+/* ---------- ritmo das seções (mesmo da home: 40 px no celular, 48 px no computador) ---------- */
+main[data-page="loja"] { --shop-gap: 40px; }
+main[data-page="loja"] > .shop-head { margin-top: 8px; }
+main[data-page="loja"] > .cta-band, main[data-page="loja"] > #shop-empty { margin-top: var(--shop-gap); }
+main[data-page="loja"] ~ .site-footer, body[data-page="loja"] .site-footer { margin-top: var(--shop-gap); }
+main[data-page="loja"] .shop-tools { gap: 8px; }
+@media (min-width: 1000px) { main[data-page="loja"] { --shop-gap: 48px; } }
+body.hdr-home .hdr { padding-block: 8px; }
 
 /* ---------- linha de resultado ---------- */
 main[data-page="loja"] > .result-line { padding: 4px 16px 12px; min-height: 44px; }
@@ -108,6 +129,29 @@ main[data-page="loja"] .active-filters button:hover { background: var(--shop-gol
 @keyframes face-breath { to { transform: scale(1.03); } }
 @keyframes face-pop { 0% { transform: scale(1); } 18% { transform: scale(1.1, .86); } 45% { transform: scale(.94, 1.1); } 100% { transform: scale(1); } }
 @keyframes face-float { 0% { opacity: 0; transform: translate(calc(-50% + var(--x) * .4), 0) scale(.3); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(calc(-50% + var(--x)), -46px) scale(1); } }
+
+/* Celular: só a linha da mascote acompanha a página (a lista de categorias fica no lugar,
+   senão a barra ocuparia quase a tela toda). A <section> vira "contents" e o slot gruda. */
+@media (max-width: 699px) {
+  .shop-sticky { display: contents; }
+  .shop-sticky .mascot-slot {
+    position: sticky; top: var(--shop-top, 0px); z-index: 40; margin: 16px 0 12px; padding: 8px 12px; border-radius: 24px;
+    background: var(--bg); border: 1px solid transparent;
+    transition: top .45s var(--ease), transform .45s var(--ease), opacity .3s ease, visibility 0s, box-shadow .3s ease, border-color .3s ease;
+  }
+  .shop-sticky.is-stuck .mascot-slot { border-color: var(--line); box-shadow: 0 14px 30px -18px rgba(58, 35, 24, .45); }
+  body.hdr-away .shop-sticky.is-stuck:not(.is-peek) .mascot-slot {
+    transform: translateY(calc(-100% - 24px)); opacity: 0; visibility: hidden; pointer-events: none;
+    transition: top .45s var(--ease), transform .45s var(--ease), opacity .3s ease, visibility 0s linear .45s;
+  }
+  main[data-page="loja"] > .result-line { padding: 16px 4px 12px; }
+}
+@media (min-width: 700px) {
+  .shop-sticky .chips--scroll { display: flex; flex-wrap: wrap; }
+  .shop-sticky .chips--scroll > .chip:first-child { grid-column: auto; }
+  .shop-sticky .chip { width: auto; min-height: 44px; padding: 0 16px 0 10px; font-size: inherit; }
+  .chip-n { margin-left: 0; }
+}
 
 @media (min-width: 900px) {
   .shop-sticky { padding: 12px 16px; }

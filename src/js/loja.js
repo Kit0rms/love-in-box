@@ -61,12 +61,18 @@ function onList({ key, value, count: n }) {
   // cartões entram em cascata a cada mudança
   if (grid && !calm) replay(grid, "is-fresh");
   if (count && !first && !calm) replay(count, "is-bump");
-  // a lista de categorias é redesenhada a cada mudança: mantém a escolhida à vista (celular)
-  const chips = $("#cat-chips"), on = chips?.querySelector("[aria-pressed=\"true\"]");
-  if (on) chips.scrollLeft = Math.max(0, on.offsetLeft - chips.offsetLeft - 24);
 
-  // filtrou com a barra grudada lá embaixo: volta ao começo da lista para ver o resultado
-  if (!first && key !== "q" && sticky?.classList.contains("is-stuck")) {
+  const phone = matchMedia("(max-width: 699px)").matches;
+  if (!first && phone && key === "categoria") {
+    // celular: as categorias ficam empilhadas acima da lista; ao escolher uma, leva a pessoa até o resultado
+    const line = $(".result-line");
+    if (line) {
+      let top = line.getBoundingClientRect().top + window.scrollY - 12;
+      if (top < window.scrollY) top -= (document.getElementById("lib-hdr")?.getBoundingClientRect().height || 0) + (sticky?.querySelector(".mascot-slot")?.getBoundingClientRect().height || 0) + 12; // subindo, cabeçalho e mascote reaparecem
+      window.scrollTo({ top, behavior: calm ? "auto" : "smooth" });
+    }
+  } else if (!first && key !== "q" && sticky?.classList.contains("is-stuck")) {
+    // filtrou com a barra grudada lá embaixo: volta ao começo da lista para ver o resultado
     // subir faz o cabeçalho reaparecer: desconta a altura dele para a contagem não ficar escondida
     const hdr = document.getElementById("lib-hdr")?.getBoundingClientRect().height || 0;
     const top = (sentinel?.getBoundingClientRect().top || 0) + window.scrollY - hdr - 8;
@@ -97,11 +103,14 @@ document.addEventListener("lib:loja", (e) => onList(e.detail));
 if (grid && (grid.children.length || !$("#shop-empty")?.hidden)) onList({ key: "init", value: "", count: grid.children.length });
 
 /* ----- ações diretas ----- */
+let peekT = 0;
 document.addEventListener("focusin", (e) => { if (e.target.id === "q") face?.react("BUSCA"); });
 document.addEventListener("click", (e) => {
   const add = e.target.closest?.("[data-add]");
   if (!add) return;
   face?.react("ADICIONOU");
+  // se a barra estiver recolhida (rolando para baixo), ela aparece um instante para a mascote comemorar
+  if (sticky) { sticky.classList.add("is-peek"); clearTimeout(peekT); peekT = setTimeout(() => sticky.classList.remove("is-peek"), 3200); }
   if (!calm) replay(add, "is-pop");
 });
 // mouse parado num produto: ela fica curiosa

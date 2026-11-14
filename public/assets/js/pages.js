@@ -161,10 +161,10 @@
     }
 
     function chipsHTML() {
-      var html = '<button class="chip" type="button" data-cat="" aria-pressed="' + (!state.categoria) + '"><img src="assets/img/icons/sparkle.png" alt="" width="24" height="24">Todos<span class="chip-n">' + all.length + '</span></button>';
+      var html = '<button class="chip" type="button" data-cat="" aria-pressed="' + (!state.categoria) + '"><img src="assets/img/icons/sparkle.png" alt="" width="24" height="24"><span class="chip-name">Todos</span><span class="chip-n">' + all.length + '</span></button>';
       L.CAT.categorias.forEach(function (c) {
         var n = all.filter(function (p) { return p.categoria === c.id; }).length; if (!n) return;
-        html += '<button class="chip" type="button" data-cat="' + esc(c.id) + '" aria-pressed="' + (state.categoria === c.id) + '"><img src="assets/img/icons/' + esc(c.icone || "sparkle") + '.png" alt="" width="24" height="24">' + esc(c.nome) + '<span class="chip-n">' + n + "</span></button>";
+        html += '<button class="chip" type="button" data-cat="' + esc(c.id) + '" aria-pressed="' + (state.categoria === c.id) + '"><img src="assets/img/icons/' + esc(c.icone || "sparkle") + '.png" alt="" width="24" height="24"><span class="chip-name">' + esc(c.nome) + '</span><span class="chip-n">' + n + "</span></button>";
       });
       return html;
     }
